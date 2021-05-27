@@ -1,0 +1,49 @@
+{
+    "type": "origins:multiple",
+    "lava_sight": {
+        "type": "origins:lava_vision",
+        "s": 0,
+        "v": 10
+    },
+    "lava_speed": {
+        "type": "origins:modify_lava_speed",
+        "modifier": {
+            "operation": "addition",
+            "value": 0.4
+        }
+    },
+    "swim_lava": {
+        "type": "origins:swimming",
+        "condition": {
+            "type": "origins:fluid_height",
+            "fluid": "minecraft:lava",
+            "comparison": ">",
+            "compare_to": 0.0,
+            "inverted": false
+        }
+    },
+    "burn_fist": {
+        "type": "origins:target_action_on_hit",
+        "entity_action": {
+            "type": "origins:set_on_fire",
+            "duration": 60
+        },
+        "cooldown": 30,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "exhaust_in_overworld": {
+        "type": "origins:modify_exhaustion",
+        "modifier": {
+            "name": "Hangy",
+            "value": 1.2,
+            "operation": "multiply_base"
+        },
+        "condition": {
+            "type": "extraorigins:piglin_safe",
+            "inverted": true
+        }
+    },
+    "hidden": true
+}

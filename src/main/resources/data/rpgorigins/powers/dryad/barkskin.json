@@ -1,0 +1,12 @@
+{
+    "type": "origins:attribute",
+    "modifier": {
+        "name": "Barkskin Armor Increase",
+        "attribute": "minecraft:generic.armor",
+        "value": 3,
+        "operation": "addition"
+    },
+    "name": "Barkskin",
+    "description": "Gives 1 1/2 armor points.",
+    "hidden": true
+}

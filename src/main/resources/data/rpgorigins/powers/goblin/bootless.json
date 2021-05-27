@@ -1,0 +1,21 @@
+{
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+        "name": "Origin modifier",
+        "attribute": "generic.movement_speed",
+        "value": -0.3,
+        "operation": "addition"
+    },
+    "condition": {
+        "type": "origins:equipped_item",
+        "equipment_slot": "feet",
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "tag": "rpgorigins:boots"
+            }
+        }
+    },
+    "name": "Bootless",
+    "description": "Goblins like to feel the grass on their feet, you cannot move while wearing boots."
+}

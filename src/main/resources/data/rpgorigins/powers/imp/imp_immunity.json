@@ -1,0 +1,67 @@
+{
+    "type": "origins:multiple",
+    "in_fire": {
+        "type": "origins:invulnerability",
+        "damage_condition": {
+            "type": "origins:name",
+            "name": "inFire"
+        },
+        "condition": {
+            "type": "extraorigins:piglin_safe"
+        }
+    },
+    "on_fire": {
+        "type": "origins:invulnerability",
+        "damage_condition": {
+            "type": "origins:name",
+            "name": "onFire"
+        },
+        "condition": {
+            "type": "extraorigins:piglin_safe"
+        }
+    },
+    "hot_floor": {
+        "type": "origins:invulnerability",
+        "damage_condition": {
+            "type": "origins:name",
+            "name": "hotFloor"
+        },
+        "condition": {
+            "type": "extraorigins:piglin_safe"
+        }
+    },
+    "lava": {
+        "type": "origins:invulnerability",
+        "damage_condition": {
+            "type": "origins:name",
+            "name": "lava"
+        },
+        "condition": {
+            "type": "extraorigins:piglin_safe"
+        }
+    },
+    "lava_sight": {
+        "type": "origins:lava_vision",
+        "s": 0,
+        "v": 5
+    },
+    "lava_speed": {
+        "type": "origins:modify_lava_speed",
+        "modifier": {
+            "operation": "addition",
+            "value": 0.2
+        }
+    },
+    "swim_lava": {
+        "type": "origins:swimming",
+        "condition": {
+            "type": "origins:fluid_height",
+            "fluid": "minecraft:lava",
+            "comparison": ">",
+            "compare_to": 0.0,
+            "inverted": false
+        }
+    },
+    "name": "Imp Immunity",
+    "description": "All fire immunity only when in the nether."
+}

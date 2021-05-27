@@ -1,0 +1,153 @@
+{
+	"type": "origins:multiple",
+	"air_from_potions": {
+		"type": "origins:action_on_item_use",
+		"hidden": true,
+		"item_condition": {
+			"type": "origins:ingredient",
+			"ingredient": {
+				"item": "minecraft:potion"
+			}
+		},
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "rpgorigins:global/strong_gills_bar",
+			"change": 600
+		}
+	},
+	"gills": {
+		"type": "origins:stacking_status_effect",
+		"min_stacks": 0,
+		"max_stacks": 1,
+		"duration_per_stack": 20,
+		"effect": {
+			"effect": "minecraft:water_breathing",
+			"amplifier": 0,
+			"is_ambient": true,
+			"show_particles": false,
+			"show_icon": false
+		},
+		"condition": {
+			"type": "origins:submerged_in",
+			"fluid": "minecraft:water"
+		}
+	},
+	"conditions": {
+		"type": "origins:simple",
+		"condition": {
+			"type": "origins:and",
+			"conditions": [{
+					"type": "origins:submerged_in",
+					"fluid": "minecraft:water",
+					"inverted": true
+				},
+				{
+					"type": "origins:or",
+					"conditions": [{
+							"type": "origins:gamemode",
+							"gamemode": "creative"
+						},
+						{
+							"type": "origins:gamemode",
+							"gamemode": "spectator"
+						}
+					],
+					"inverted": true
+				}
+			]
+		}
+	},
+	"bar": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 1640,
+		"start_value": 1640,
+		"hud_render": {
+			"should_render": true,
+			"sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+			"bar_index": 14,
+			"condition": {
+				"type": "origins:or",
+				"conditions": [{
+					"type": "origins:resource",
+					"resource": "rpgorigins:global/strong_gills_bar",
+					"comparison": "<",
+					"compare_to": 1640
+				}]
+			}
+		},
+		"hidden": true
+	},
+	"bar_on_respawn": {
+		"type": "origins:action_on_callback",
+		"entity_action_chosen": {
+			"type": "origins:change_resource",
+			"resource": "rpgorigins:global/strong_gills_bar",
+			"change": 1640
+		},
+		"entity_action_respawned": {
+			"type": "origins:change_resource",
+			"resource": "rpgorigins:global/strong_gills_bar",
+			"change": 1640
+		}
+	},
+	"suffocating_on_land": {
+		"type": "origins:damage_over_time",
+		"interval": 1,
+		"onset_delay": 1,
+		"damage": 1,
+		"damage_source": {
+			"name": "drown",
+			"unblockable": true,
+			"bypasses_armor": true
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [{
+					"type": "origins:resource",
+					"resource": "rpgorigins:global/strong_gills_bar",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:power_active",
+					"power": "rpgorigins:global/strong_gills_conditions"
+				}
+			]
+		}
+	},
+	"bar_behavior": {
+		"type": "origins:action_over_time",
+		"interval": 1,
+		"entity_action": {
+			"type": "origins:if_else_list",
+			"actions": [{
+					"condition": {
+						"type": "origins:power_active",
+						"power": "rpgorigins:global/strong_gills_conditions"
+					},
+					"action": {
+						"type": "origins:change_resource",
+						"resource": "rpgorigins:global/strong_gills_bar",
+						"change": -2
+					}
+				},
+				{
+					"condition": {
+						"type": "origins:resource",
+						"resource": "rpgorigins:global/strong_gills_bar",
+						"comparison": "<",
+						"compare_to": 1640
+					},
+					"action": {
+						"type": "origins:change_resource",
+						"resource": "rpgorigins:global/strong_gills_bar",
+						"change": 1
+					}
+				}
+			]
+		}
+	},
+	"name": "Strong Gills",
+	"description": "You breathe on land for much longer. (Can replenish with water bottles)"
+}

@@ -1,0 +1,73 @@
+{
+    "type": "origins:multiple",
+    "jump": {
+        "type": "origins:modify_jump",
+        "modifier": {
+            "operation": "addition",
+            "value": 0.2
+        }
+    },
+    "damage": {
+        "type": "origins:modify_damage_dealt",
+        "modifier": {
+            "name": "more dmg",
+            "operation": "addition",
+            "value": 5.0
+        }
+    },
+    "attributes": {
+        "type": "origins:attribute",
+        "modifiers": [{
+                "name": "hearts",
+                "attribute": "minecraft:generic.max_health",
+                "value": 4,
+                "operation": "addition"
+            },
+            {
+                "name": "Origin modifier",
+                "attribute": "minecraft:generic.attack_speed",
+                "value": -0.3,
+                "operation": "addition"
+            },
+            {
+                "name": "Origin modifier",
+                "attribute": "minecraft:generic.movement_speed",
+                "value": 0.02,
+                "operation": "addition"
+            },
+            {
+                "name": "Origin modifier",
+                "attribute": "reach-entity-attributes:attack_range",
+                "value": 1.5,
+                "operation": "addition"
+            },
+            {
+                "name": "Origin modifier",
+                "attribute": "reach-entity-attributes:reach",
+                "value": 1,
+                "operation": "addition"
+            }
+        ]
+    },
+    "exhaust": {
+        "type": "origins:modify_exhaustion",
+        "modifier": {
+            "name": "Hanggyyy",
+            "value": 3.5,
+            "operation": "multiply_base"
+        }
+    },
+    "falldmg": {
+        "type": "origins:invulnerability",
+        "damage_condition": {
+            "type": "origins:name",
+            "name": "fall"
+        },
+        "condition": {
+            "type": "origins:fall_distance",
+            "comparison": "<",
+            "compare_to": 4
+        }
+    },
+    "hidden": true
+}

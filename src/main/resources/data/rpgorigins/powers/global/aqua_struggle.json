@@ -1,0 +1,20 @@
+{
+    "type": "origins:stacking_status_effect",
+    "min_stacks": -20,
+    "max_stacks": 60,
+    "duration_per_stack": 2,
+    "effect": {
+        "effect": "minecraft:blindness",
+        "is_ambient": true,
+        "show_icon": false,
+        "show_particles": false
+    },
+    "condition": {
+        "type": "origins:fluid_height",
+        "fluid": "minecraft:water",
+        "comparison": ">",
+        "compare_to": 0
+    },
+    "name": "Aquatic Struggle",
+    "description": "Your lack of practice with swimming has caused your vision to be impared when in water."
+}

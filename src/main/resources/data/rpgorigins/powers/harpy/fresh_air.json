@@ -1,0 +1,11 @@
+{
+    "type": "origins:prevent_sleep",
+    "block_condition": {
+      "type": "origins:height",
+      "comparison": "<",
+      "compare_to": 90
+    },
+    "message": "Not enough fresh air to sleep.",
+    "name": "Fresh Air",
+    "description": "You can only sleep above 90 blocks."
+}

@@ -1,0 +1,44 @@
+{
+    "type": "origins:multiple",
+    "in_fire": {
+        "type": "origins:invulnerability",
+        "damage_condition": {
+            "type": "origins:name",
+            "name": "inFire"
+        },
+        "condition": {
+            "type": "extraorigins:piglin_safe"
+        }
+    },
+    "on_fire": {
+        "type": "origins:invulnerability",
+        "damage_condition": {
+            "type": "origins:name",
+            "name": "onFire"
+        },
+        "condition": {
+            "type": "extraorigins:piglin_safe"
+        }
+    },
+    "hot_floor": {
+        "type": "origins:invulnerability",
+        "damage_condition": {
+            "type": "origins:name",
+            "name": "hotFloor"
+        },
+        "condition": {
+            "type": "extraorigins:piglin_safe"
+        }
+    },
+    "lava": {
+        "type": "origins:invulnerability",
+        "damage_condition": {
+            "type": "origins:name",
+            "name": "lava"
+        },
+        "condition": {
+            "type": "extraorigins:piglin_safe"
+        }
+    },
+    "hidden": true
+}

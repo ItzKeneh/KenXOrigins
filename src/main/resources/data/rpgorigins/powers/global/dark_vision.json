@@ -1,0 +1,11 @@
+{
+    "type": "origins:night_vision",
+    "strength": 0.3,
+    "condition": {
+      "type": "origins:submerged_in",
+      "fluid": "minecraft:water",
+      "inverted": true
+    },
+    "name": "Darkvision",
+    "description": "You can see better in the dark."
+  }

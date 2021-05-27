@@ -1,0 +1,20 @@
+{
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+        "name": "Origin modifier",
+        "value": 2.5,
+        "operation": "addition"
+    },
+    "condition": {
+        "type": "origins:equipped_item",
+        "equipment_slot": "mainhand",
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "tag": "rpgorigins:axes"
+            }
+        }
+    },
+    "name": "Axe Proficiency",
+    "description": "You do more damage with axes."
+}

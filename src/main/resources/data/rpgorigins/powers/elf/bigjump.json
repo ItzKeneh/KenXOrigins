@@ -1,0 +1,86 @@
+{
+    "type": "origins:multiple",
+    "bigjump_resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 460,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+            "bar_index": 22,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "rpgorigins:elf/bigjump_bigjump_resource",
+                "comparison": "<",
+                "compare_to": 460
+            }
+        },
+        "start_value": 460
+    },
+    "bigjump_active": {
+        "type": "origins:active_self",  
+        "hud_render": {
+            "should_render": false
+        },
+        "cooldown": 0,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute at @s run playsound minecraft:block.beacon.activate master @a[distance=..4.5] ~ ~ ~ 1 .3",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "effect give @s minecraft:jump_boost 15 3 true",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "rpgorigins:elf/bigjump_bigjump_resource",
+                    "change": -460
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "rpgorigins:elf/bigjump_bigjump_resource",
+            "comparison": "==",
+            "compare_to": 460
+        }
+    },
+    "bigjump_cooldown": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "rpgorigins:elf/bigjump_bigjump_resource",
+            "change": 1
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "rpgorigins:elf/bigjump_bigjump_resource",
+            "comparison": "<",
+            "compare_to": 460
+        }
+    },
+    "bigjump_cooldown_particles": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "execute as @s run function rpgorigins:bigjump_particles",
+            "permission_level": 4
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "rpgorigins:elf/bigjump_bigjump_resource",
+            "comparison": "<=",
+            "compare_to": 300
+        }
+    },
+    "name": "Fae Magic",
+    "description": "Use your fae powers to boost your jump! [Primary Keybind]"
+}
+
