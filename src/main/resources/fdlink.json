@@ -1,0 +1,78 @@
+{
+  "chatChannels": ["841154245948735488"],
+  "logChannels": [],
+  "webhook": {
+    "url": "https://discord.com/api/webhooks/841154332049276960/dLsZ6HnA8Cqn_Zf6_r-bqJD36sXkE7VEP1lvS4o2Fvf4i0FXCu2g3ShVxbuppxpvRJRh",
+    "mentions": {
+      "everyone": false,
+      "roles": false,
+      "users": true
+    }
+  },
+  "ignoreBots": true,
+  "activityUpdateInterval": 120,
+  "minecraftToDiscord": {
+    "general": {
+      "enableDebugLogs": false
+    },
+    "chatChannels": {
+      "commandPrefix": "k!",
+      "allowDiscordCommands": true,
+      "serverStartingMessage": true,
+      "serverStartMessage": true,
+      "serverStopMessage": true,
+      "serverStoppingMessage": true,
+      "customChannelDescription": true,
+      "minecraftToDiscordTag": false,
+      "minecraftToDiscordDiscriminator": false,
+      "playerMessages": true,
+      "teamPlayerMessages": true,
+      "joinAndLeaveMessages": true,
+      "advancementMessages": true,
+      "challengeMessages": true,
+      "goalMessages": true,
+      "deathMessages": true,
+      "sendMeCommand": true,
+      "sendSayCommand": true,
+      "adminMessages": false,
+      "atATellRaw": false,
+      "achievementMessages": true
+    },
+    "logChannels": {
+      "serverStartingMessage": true,
+      "serverStartMessage": true,
+      "serverStopMessage": true,
+      "serverStoppingMessage": true,
+      "customChannelDescription": false,
+      "minecraftToDiscordTag": false,
+      "minecraftToDiscordDiscriminator": false,
+      "playerMessages": false,
+      "teamPlayerMessages": false,
+      "joinAndLeaveMessages": true,
+      "advancementMessages": false,
+      "challengeMessages": false,
+      "goalMessages": false,
+      "deathMessages": true,
+      "sendMeCommand": true,
+      "sendSayCommand": true,
+      "adminMessages": true,
+      "atATellRaw": false,
+      "achievementMessages": true
+    }
+  },
+  "discordToMinecraft": {
+    "pingLongVersion": false
+  },
+  "emojiMap": [
+    {
+      "name": "example_name",
+      "id": ":example_id:22222222"
+    },
+    {
+      "name": "example_name2",
+      "id": ":example_id2:22222222"
+    }
+  ],
+  "version": 9,
+  "token": "ODI4Njc5MjA0MzEyMTg2OTI3.YGtFpg.ni8ibSUEqQFHpGdlsCX8munjcqc"
+}
