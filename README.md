@@ -1,8 +1,12 @@
-# Fabric Example Mod
+# Rpg Origins
 
-## Setup
+## Description
 
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
+This mod will override the regular origins and extra origins and replace them with 12 new ones.
+
+## Required Mods
+
+You will need Origins, ExtraOrigins, and Pehkui for this to work.
 
 ## License
 
