@@ -1,0 +1,16 @@
+{
+    "powers": [
+        "origins:vegetarian",
+        "rpgorigins:elf/e_homeland",
+        "rpgorigins:elf/sensitive",
+        "rpgorigins:global/lightweight",
+        "rpgorigins:elf/bigjump"
+    ],
+	"icon": {
+		"item": "minecraft:grass"
+	},
+	"order": 1,
+	"impact": 1,
+    "name": "Elven",
+    "description": "Intelligent beings that reside in the forest."
+}

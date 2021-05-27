@@ -1,0 +1,17 @@
+{
+    "powers": [
+		"rpgorigins:global/short",
+		"rpgorigins:goblin/g_homeland",
+		"rpgorigins:goblin/extra_crafts",
+		"rpgorigins:goblin/bootless",
+		"rpgorigins:goblin/scram",
+		"rpgorigins:goblin/climbing"
+    ],
+	"icon": {
+		"item": "minecraft:slime_block"
+	},
+	"order": 8,
+	"impact": 2,
+    "name": "Goblin",
+    "description": "Short tinkerers, full of chaotic energy."
+}

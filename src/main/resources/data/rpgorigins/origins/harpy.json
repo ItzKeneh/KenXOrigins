@@ -1,0 +1,19 @@
+{
+    "powers": [
+        "origins:vegetarian",
+        "origins:elytra",
+        "rpgorigins:harpy/fresh_air",
+        "origins:more_kinetic_damage",
+        "rpgorigins:harpy/h_homeland",
+        "rpgorigins:global/light_stomach",
+        "rpgorigins:harpy/ascending_gust",
+        "rpgorigins:harpy/sharp_talons"
+    ],
+	"icon": {
+		"item": "minecraft:elytra"
+	},
+	"order": 3,
+	"impact": 3,
+    "name": "Harpies",
+    "description": "Beautiful beings of the sky. "
+}
