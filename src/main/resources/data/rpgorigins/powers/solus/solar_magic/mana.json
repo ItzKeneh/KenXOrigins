@@ -1,0 +1,41 @@
+{
+    "type": "origins:multiple",
+    "bar": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 300,
+        "hud_render": {
+            "should_render": true,
+            "bar_index": 2
+        },
+        "start_value": 300
+    },
+    "regen_bar": {
+        "type": "origins:action_over_time",
+        "interval": 21,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:solus/solar_magic/mana_bar",
+            "change": 1
+        },
+        "conditions": [{
+                "type": "origins:daytime"
+            },
+            {
+                "type": "origins:exposed_to_sky"
+            },
+            {
+                "type": "origins:in_rain",
+                "inverted": true
+            },
+            {
+                "type": "origins:fluid_height",
+                "fluid": "minecraft:water",
+                "comparison": "<=",
+                "compare_to": 0
+            }
+        ]
+    },
+    "name": "Solar Magic",
+    "description": "You have mastered the power of the sun. You can store solar power into yourself (Max storage is 300), only regenerating when you are in the sun. To execute a spell you must sneak and press a hotbar keybind. (Example: Shift+1)"
+}

@@ -1,0 +1,74 @@
+{
+    "type": "origins:multiple",
+    "fireball_1": {
+        "type": "origins:fire_projectile",
+        "entity_type": "minecraft:small_fireball",
+        "tag": "{NoGravity:1b}",
+        "cooldown": 0,
+        "speed": 0.2,
+        "sound": "item.firecharge.use",
+        "hud_render": {
+            "should_render": false
+        },
+        "key": {
+            "key": "key.hotbar.1"
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                    "type": "origins:resource",
+                    "resource": "*:solus/solar_magic/mana_bar",
+                    "comparison": ">=",
+                    "compare_to": 40
+                },
+                {
+                    "type": "origins:sneaking"
+                }
+            ]
+        }
+    },
+    "fireball_2": {
+        "type": "origins:active_self",
+        "hud_render": {
+            "should_render": false
+        },
+        "key": {
+            "key": "key.hotbar.1"
+        },
+        "cooldown": 0,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [{
+                    "type": "origins:execute_command",
+                    "command": "execute at @s run playsound minecraft:entity.ghast.shoot master @a[distance=..5.5] ~ ~ ~ 1 1.9",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:solus/solar_magic/mana_bar",
+                    "change": -40
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute at @s run particle dust .8 .3 .1 1 ~ ~.2 ~ 0.65 0 0.65 0 100",
+                    "permission_level": 4
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                    "type": "origins:resource",
+                    "resource": "*:solus/solar_magic/mana_bar",
+                    "comparison": ">=",
+                    "compare_to": 40
+                },
+                {
+                    "type": "origins:sneaking"
+                }
+            ]
+        }
+    },
+    "name": "[1] Fireball",
+    "description": "Harness the power of the sun and shoot a fireball in the direction you face. [Solar Power: 40]"
+}
