@@ -1,0 +1,21 @@
+{
+    "type": "origins:multiple",
+    "spawn_homeland": {
+        "type": "origins:modify_player_spawn",
+        "dimension": "minecraft:overworld",
+        "biome": "minecraft:taiga_mountains"
+    },
+    "particles": {
+        "type": "origins:particle",
+        "particle": "minecraft:cloud",
+        "frequency": 6,
+        "hidden": true,
+        "condition": {
+            "type": "origins:power_active",
+            "power": "*:nimbus/cloud_form/toggle",
+            "inverted": true
+        }
+    },
+    "name": "Nimbus Homeland",
+    "description": "You spawn in a taiga mountains biome."
+}

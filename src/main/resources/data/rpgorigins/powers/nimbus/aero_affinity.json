@@ -1,0 +1,96 @@
+{
+    "name": "Aero Affinity",
+    "description": "You are able to place dirt in the air, making it easier to build sky bases.",
+    "type": "origins:active_self",
+    "cooldown": 4,
+    "key": {
+        "key": "key.use"
+    },
+    "hud_render": {
+        "should_render": false
+    },
+    "condition": {
+        "type": "origins:and",
+        "conditions": [{
+                "type": "origins:on_block",
+                "inverted": true
+            },
+            {
+                "type": "origins:or",
+                "conditions": [{
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "mainhand",
+                        "item_condition": {
+                            "type": "origins:ingredient",
+                            "ingredient": {
+                                "item": "minecraft:dirt"
+                            }
+                        }
+                    },
+                    {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "offhand",
+                        "item_condition": {
+                            "type": "origins:ingredient",
+                            "ingredient": {
+                                "item": "minecraft:dirt"
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [{
+                "type": "origins:if_else_list",
+                "actions": [{
+                        "condition": {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "item": "minecraft:dirt"
+                                }
+                            }
+                        },
+                        "action": {
+                            "type": "origins:equipped_item_action",
+                            "equipment_slot": "mainhand",
+                            "action": {
+                                "type": "origins:consume",
+                                "amount": 1
+                            }
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "offhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "item": "minecraft:dirt"
+                                }
+                            }
+                        },
+                        "action": {
+                            "type": "origins:equipped_item_action",
+                            "equipment_slot": "offhand",
+                            "action": {
+                                "type": "origins:consume",
+                                "amount": 1
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "setblock ~ ~-1 ~ dirt"
+            }
+        ]
+    }
+}
