@@ -11,13 +11,14 @@
         "rpgorigins:phoenix/kindled_spirit",
         "rpgorigins:phoenix/flame_flap",
         "rpgorigins:phoenix/spicy_diet",
-        "rpgorigins:phoenix/burning_fist"
+        "rpgorigins:phoenix/burning_fist",
+        "rpgorigins:phoenix/reincarnate_shrink"
         
     ],
 	"icon": {
 		"item": "minecraft:blaze_powder"
 	},
-	"order": 6,
+	"order": 10,
 	"impact": 3,
     "name": "Phoenix",
     "description": "Winged infernal creatures, cursed with reincarnation."
