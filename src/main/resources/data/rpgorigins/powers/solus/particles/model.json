@@ -1,0 +1,31 @@
+{
+    "type": "origins:multiple",
+    "model": {
+        "type": "origins:model_color",
+        "blue": 0,
+        "green": 0.65,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:solus/solar_magic/mana_bar",
+            "comparison": ">=",
+            "compare_to": 10
+        }
+    },
+    "short": {
+        "type": "extraorigins:modify_size",
+        "scale": 0.85
+    },
+    "default_particles": {
+        "type": "origins:particle",
+        "particle": "minecraft:enchanted_hit",
+        "frequency": 23,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:solus/solar_magic/mana_bar",
+            "comparison": ">=",
+            "compare_to": 10
+        }
+    },
+    "name": "Solar Appearance",
+    "description": "You are a little shorter, along with emiting electric particles and having solar skin. The particles and skin only show if you have at least 10 solar power stored."
+}

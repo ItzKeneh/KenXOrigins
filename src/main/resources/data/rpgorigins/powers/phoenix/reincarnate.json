@@ -1,0 +1,343 @@
+{
+    "type": "origins:multiple",
+    "reincarnate_resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 3,
+        "hud_render": {
+            "should_render": true,
+            "bar_index": 7
+        },
+        "start_value": 3
+    },
+    "lava_resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 18,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+            "bar_index": 3,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "rpgorigins:phoenix/reincarnate_lava_resource",
+                "comparison": ">",
+                "compare_to": 0
+            }
+        },
+        "max_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:feed",
+                    "food": 7,
+                    "saturation": 2.2
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "rpgorigins:phoenix/reincarnate_lava_resource",
+                    "change": -18
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:entity.generic.drink",
+                    "pitch": 0.5
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "clear @s lava_bucket 1",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "give @s bucket 1",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:apply_effect",
+                    "effect": {
+                        "effect": "minecraft:regeneration",
+                        "duration": 40,
+                        "amplifier": 3,
+                        "is_ambient": true,
+                        "show_icon": false,
+                        "show_particles": false
+                    }
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "rpgorigins:phoenix/reincarnate_reincarnate_resource",
+                    "change": 1
+                }
+            ]
+        }
+    },
+    "resource_on_respawn": {
+		"type": "origins:action_on_callback",
+		"entity_action_respawned": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "rpgorigins:phoenix/reincarnate_reincarnate_resource",
+                    "change": 3
+                }
+            ]
+		}
+	},
+    "prevent_death": {
+        "type": "origins:prevent_death",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "rpgorigins:phoenix/reincarnate_reincarnate_resource",
+                    "change": -1
+                },
+                {
+                    "type": "origins:apply_effect",
+                    "effects": [
+                        {
+                            "effect": "minecraft:resistance",
+                            "amplifier": 1,
+                            "duration": 1200,
+                            "is_ambient": true,
+                            "show_icon": false,
+                            "show_particles": true
+                        },
+                        {
+                            "effect": "minecraft:regeneration",
+                            "duration": 60,
+                            "amplifier": 3,
+                            "is_ambient": true,
+                            "show_icon": false,
+                            "show_particles": false
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:item.totem.use",
+                    "pitch": 2
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute at @s run particle minecraft:dust 1 .3 0 1 ~ ~ ~ 0.2 1 0.2 1 50",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute at @s run particle minecraft:dust 1 0.04 0 1 ~ ~ ~ 0.2 1 0.2 1 50",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute at @s run particle minecraft:flame ~ ~2 ~ 0.4 0 0.4 0 50",
+                    "permission_level": 4
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "rpgorigins:phoenix/reincarnate_reincarnate_resource",
+            "comparison": ">",
+            "compare_to": 0
+        }
+    },
+    "set_stats": {
+        "type": "origins:action_over_time",
+        "interval": 18,
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "rpgorigins:phoenix/reincarnate_reincarnate_resource",
+                        "comparison": "==",
+                        "compare_to": 2
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "attribute @s minecraft:generic.max_health base set 16",
+                        "permission_level": 4
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "rpgorigins:phoenix/reincarnate_reincarnate_resource",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "attribute @s minecraft:generic.max_health base set 12",
+                        "permission_level": 4
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "rpgorigins:phoenix/reincarnate_reincarnate_resource",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "attribute @s minecraft:generic.max_health base set 8",
+                        "permission_level": 4
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "rpgorigins:phoenix/reincarnate_reincarnate_resource",
+                        "comparison": "==",
+                        "compare_to": 3
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "attribute @s minecraft:generic.max_health base set 20",
+                        "permission_level": 4
+                    }
+                }
+            ]
+        }
+    },
+    "lava_lower_timer": {
+        "type": "origins:action_over_time",
+        "interval": 25,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "rpgorigins:phoenix/reincarnate_lava_resource",
+                "comparison": ">",
+                "compare_to": 0
+            },
+            "if_action": {
+                "type": "origins:change_resource",
+                "resource": "rpgorigins:phoenix/reincarnate_lava_resource",
+                "change": -3
+            }
+        }
+    },
+    "lava_timer": {
+        "type": "origins:action_over_time",
+		"interval": 20,
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "mainhand",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"item": "minecraft:lava_bucket"
+						}
+					},
+					"inverted": true
+				},
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "offhand",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"item": "minecraft:lava_bucket"
+						}
+					},
+					"inverted": true
+				}
+			]
+		},
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "rpgorigins:phoenix/reincarnate_lava_resource",
+			"change": -18
+		}
+    },
+    "drink_lava": {
+        "type": "origins:active_self",
+        "cooldown": 4,
+        "key": {
+            "key": "key.use",
+            "continuous": true
+        },
+        "hud_render": {
+            "should_render": false
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:food_level",
+                    "comparison": ">",
+                    "compare_to": -1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "rpgorigins:phoenix/reincarnate_reincarnate_resource",
+                    "comparison": "<",
+                    "compare_to": 3
+                },
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "item": "minecraft:lava_bucket"
+                                }
+                            }
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "offhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "item": "minecraft:lava_bucket"
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:entity.generic.drink",
+                    "pitch": 0.8
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "rpgorigins:phoenix/reincarnate_lava_resource",
+                    "change": 3
+                },
+                {
+                    "type": "origins:apply_effect",
+                    "effect": {
+                        "effect": "minecraft:slowness",
+                        "amplifier": 3,
+                        "duration": 4,
+                        "is_ambient": true,
+                        "show_icon": false,
+                        "show_particles": false
+                    }
+                }
+            ]
+        }
+    },
+    "name": "Reincarnation",
+    "description": "You can reincarnate 3 times before fully dying, each time getting weaker and smaller. Your reincarnation ability replenishes by drinking lava."
+}
