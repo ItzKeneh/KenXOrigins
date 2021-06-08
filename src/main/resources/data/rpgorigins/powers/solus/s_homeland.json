@@ -1,7 +1,0 @@
-{
-    "type": "origins:modify_player_spawn",
-    "dimension": "minecraft:overworld",
-    "biome": "minecraft:desert_lakes",
-    "name": "Solus Homeland",
-    "description": "You spawn in a desert biome."
-}

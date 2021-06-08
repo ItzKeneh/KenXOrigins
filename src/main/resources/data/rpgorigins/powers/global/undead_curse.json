@@ -1,7 +1,0 @@
-{
-    "type": "origins:entity_group",
-    "group": "undead",
-    "name": "Undead Curse",
-    "description": "You are classified as undead.",
-    "hidden": true
-}
