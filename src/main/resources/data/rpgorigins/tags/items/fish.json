@@ -1,0 +1,11 @@
+{
+    "replace": false,
+    "values": [
+        "cod",
+        "salmon",
+        "tropical_fish",
+        "cooked_cod",
+        "cooked_salmon",
+        "dried_kelp"
+    ]
+}

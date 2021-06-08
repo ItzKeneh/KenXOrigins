@@ -1,0 +1,23 @@
+{
+    "powers": [
+        "origins:slow_falling",
+        "origins:claustrophobia",
+        "origins:fall_immunity",
+        "rpgorigins:global/no_armor",
+        "rpgorigins:nimbus/n_homeland",
+        "rpgorigins:nimbus/aero_affinity",
+        "rpgorigins:nimbus/clouds_diet",
+        "rpgorigins:nimbus/i_prefer_the_air",
+        "rpgorigins:nimbus/cloud_form/toggle",
+        "rpgorigins:nimbus/cloud_form/active",
+        "rpgorigins:nimbus/fragile"
+
+    ],
+	"icon": {
+		"item": "minecraft:white_concrete_powder"
+	},
+	"order": 4,
+	"impact": 3,
+    "name": "Nimbus",
+    "description": "An air elemental, forever belonging to the skies."
+}
