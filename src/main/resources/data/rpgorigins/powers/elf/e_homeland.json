@@ -1,0 +1,77 @@
+{
+    "type": "origins:multiple",
+    "spawn_homeland": {
+        "type": "origins:modify_player_spawn",
+        "dimension": "minecraft:overworld",
+        "biome": "minecraft:jungle"
+    },
+    "homeland_buffs": {
+        "type": "origins:stacking_status_effect",
+        "min_stacks": 0,
+        "max_stacks": 1,
+        "duration_per_stack": 19,
+        "effects": [
+            {
+                "effect": "minecraft:speed",
+                "amplifier": 2,
+                "is_ambient": true,
+                "show_particles": false,
+                "show_icon": false
+            },
+            {
+                "effect": "minecraft:resistance",
+                "amplifier": 1,
+                "is_ambient": true,
+                "show_icon": false,
+                "show_particles": false
+            }
+        ],
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:biome",
+                    "condition": {
+                        "type": "origins:category",
+                        "category": "forest"
+                    }
+                },
+                {
+                    "type": "origins:biome",
+                    "condition": {
+                        "type": "origins:category",
+                        "category": "jungle"
+                    }
+                },
+                {
+                    "type": "origins:biome",
+                    "condition": {
+                        "type": "origins:category",
+                        "category": "swamp"
+                    }
+                },
+                {
+                    "type": "origins:biome",
+                    "condition": {
+                        "type": "origins:category",
+                        "category": "taiga"
+                    }
+                }
+            ]
+        }
+    },
+    "homeland_sleep": {
+        "type": "origins:prevent_sleep",
+        "message": "You may only sleep in your homeland",
+        "condition": {
+            "type": "origins:biome",
+            "condition": {
+                "type": "origins:category",
+                "category": "jungle",
+                "inverted": true
+            }
+        }
+    },
+    "name": "Elf Homeland",
+    "description": "You spawn in a forest biome, and you're only allowed to sleep there, but you gain buffs there too."
+}

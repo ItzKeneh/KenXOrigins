@@ -1,0 +1,23 @@
+{
+    
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.attack_damage",
+        "operation": "addition",
+        "value": 3.6,
+        "name": "Increased Fist Damage"
+    },
+    "tick_rate": 25,
+    "condition": {
+        "type": "origins:equipped_item",
+        "equipment_slot": "mainhand",
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "minecraft:air"
+            }
+        }
+    },
+    "name": "Sharp Talons",
+    "description": "You deal more fist damage."
+}

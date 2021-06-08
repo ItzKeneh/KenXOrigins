@@ -1,0 +1,29 @@
+{
+    "type": "origins:recipe",
+    "recipe": {
+      "id": "kenehorigins:trident_craft",
+      "type": "minecraft:crafting_shaped",
+      "pattern":[
+        " PQ",
+        " HP",
+        "P  "
+      ],
+      "key": {
+        "Q": {
+            "item": "minecraft:quartz"
+        },
+        "P": {
+            "item": "minecraft:prismarine_shard"
+        },
+        "H": {
+            "item": "minecraft:heart_of_the_sea"
+        }
+    
+      },
+      "result": {
+        "item": "minecraft:trident"
+      }
+    },
+    "name": "Trident Adept",
+    "description": "Your experience with the sea has granted you the ability to craft tridents."
+}

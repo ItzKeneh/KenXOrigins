@@ -1,0 +1,15 @@
+{
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.attack_damage",
+        "operation": "addition",
+        "value": 3,
+        "name": "Increased strength in the sun"
+    },
+    "tick_rate": 25,
+    "condition": {
+        "type": "origins:exposed_to_sun"
+    },
+    "name": "Solar Powered",
+    "description": "Gain extra attack damage in the sun."
+}

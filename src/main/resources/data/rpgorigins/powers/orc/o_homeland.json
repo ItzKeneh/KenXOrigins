@@ -1,0 +1,30 @@
+{
+    "type": "origins:multiple",
+    "spawn_homeland": {
+        "type": "origins:modify_player_spawn",
+        "dimension": "minecraft:overworld",
+        "biome": "minecraft:wooded_badlands_plateau"
+    },
+    "homeland_buff": {
+        "type": "origins:stacking_status_effect",
+        "min_stacks": 0,
+        "max_stacks": 1,
+        "duration_per_stack": 19,
+        "effect": {
+            "effect": "minecraft:speed",
+            "amplifier": 1,
+            "is_ambient": true,
+            "show_particles": false,
+            "show_icon": false
+        },
+        "condition": {
+            "type": "origins:biome",
+            "condition": {
+                "type": "origins:category",
+                "category": "mesa"
+            }
+        }
+    },
+    "name": "Orc Homeland",
+    "description": "You spawn in the badlands and when in the bandlands you gain speed."
+}

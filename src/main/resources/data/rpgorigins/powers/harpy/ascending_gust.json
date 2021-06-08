@@ -1,0 +1,141 @@
+{
+    "type": "origins:multiple",
+    "gust_resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 5,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+            "bar_index": 23,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "rpgorigins:harpy/ascending_gust_gust_resource",
+                "comparison": "<",
+                "compare_to": 5
+            }
+        },
+        "start_value": 5
+    },
+    "gust_launch": {
+        "type": "origins:active_self",  
+        "hud_render": {
+            "should_render": false
+        },
+        "cooldown": 0,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:add_velocity",
+                    "y": 1,
+                    "space": "world",
+                    "set": true
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "rpgorigins:harpy/ascending_gust_gust_resource",
+                    "change": -1
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute at @s run playsound minecraft:entity.ender_dragon.flap master @a[distance=..4] ~ ~ ~ 1 1.3",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute at @s run particle minecraft:cloud ~ ~ ~ 0.5 0 0.5 0 30",
+                    "permission_level": 4
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "rpgorigins:harpy/ascending_gust_gust_resource",
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:fall_flying",
+                    "inverted": true
+                }
+            ]
+        }
+    },
+    "gust_flap": {
+        "type": "origins:active_self",  
+        "hud_render": {
+            "should_render": false
+        },
+        "cooldown": 0,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:add_velocity",
+                    "z": 1,
+                    "space": "local",
+                    "set": true
+                    
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "rpgorigins:harpy/ascending_gust_gust_resource",
+                    "change": -1
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute at @s run playsound minecraft:entity.ender_dragon.flap master @a[distance=..4] ~ ~ ~ 1 1.3",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute at @s run particle minecraft:cloud ~ ~ ~ 0.3 0.2 0.3 0 50",
+                    "permission_level": 4
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "rpgorigins:harpy/ascending_gust_gust_resource",
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:fall_flying"
+                }
+            ]
+        }
+    },
+    "gust_regen": {
+        "type": "origins:action_over_time",
+        "interval": 40,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "rpgorigins:harpy/ascending_gust_gust_resource",
+            "change": 1
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "rpgorigins:harpy/ascending_gust_gust_resource",
+                    "comparison": "<",
+                    "compare_to": 5
+                },
+                {
+                    "type": "origins:on_block"
+                }
+            ]
+        }
+    },
+    "name": "Ascending Gust",
+    "description": "Get 5 flap charges. While flying with elytra, you get boost where you look."
+}

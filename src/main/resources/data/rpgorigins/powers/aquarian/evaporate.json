@@ -1,0 +1,18 @@
+{
+    "type": "origins:multiple",
+    "health_nether": {
+        "type": "origins:conditioned_attribute",
+        "tick_rate": 20,
+        "modifier": {
+            "name": "Health",
+            "attribute": "minecraft:generic.max_health",
+            "operation": "addition",
+            "value": -2
+        },
+        "condition": {
+            "type": "extraorigins:piglin_safe"
+        }
+    },
+    "name": "Evaporate",
+    "description": "When in the nether you evaporate, losing 2 hearts and shrinking"
+}

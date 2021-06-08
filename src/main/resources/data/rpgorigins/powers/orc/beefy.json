@@ -1,0 +1,35 @@
+{
+    "type": "origins:multiple",
+    "bigboi": {
+        "type": "extraorigins:modify_size",
+        "scale": 1.1
+    },
+    "hungry": {
+        "type": "origins:modify_exhaustion",
+        "modifier": {
+            "name": "Hanggyyy",
+            "value": 0.8,
+            "operation": "multiply_base"
+        }
+    },
+    "health": {
+        "type": "origins:attribute",
+        "modifier": {
+            "name": "hearts",
+            "attribute": "minecraft:generic.max_health",
+            "value": 2,
+            "operation": "addition"
+        }
+    },
+    "armor": {
+        "type": "origins:attribute",
+        "modifier": {
+            "name": "armor_points",
+            "attribute": "minecraft:generic.armor",
+            "value": 4,
+            "operation": "addition"
+        }
+    },
+    "name": "Large Build",
+    "description": "Your large build gives you more armor and health, but you need to eat more."
+}

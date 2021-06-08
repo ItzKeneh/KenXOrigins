@@ -1,0 +1,226 @@
+{
+    "type": "origins:multiple",
+    "sugar_cane": {
+        "type": "origins:recipe",
+        "recipe": {
+            "id": "rporigins:craftable/sugar_cane",
+            "type": "minecraft:crafting_shapeless",
+            "ingredients": [{
+                    "item": "minecraft:bone_meal"
+                },
+                {
+                    "item": "minecraft:stick"
+                }
+            ],
+            "result": {
+                "item": "minecraft:sugar_cane",
+                "count": 2
+            }
+        }
+    },
+    "cactus": {
+        "type": "origins:recipe",
+        "recipe": {
+            "id": "rporigins:craftable/cactus",
+            "type": "minecraft:crafting_shapeless",
+            "ingredients": [{
+                    "item": "minecraft:bone_meal"
+                },
+                {
+                    "item": "minecraft:sand"
+                }
+            ],
+            "result": {
+                "item": "minecraft:cactus",
+                "count": 2
+            }
+        }
+    },
+    "bamboo": {
+        "type": "origins:recipe",
+        "recipe": {
+            "id": "rporigins:craftable/bamboo",
+            "type": "minecraft:crafting_shapeless",
+            "ingredients": [{
+                    "item": "minecraft:bone_meal"
+                },
+                {
+                    "item": "minecraft:stick"
+                },
+                {
+                    "item": "minecraft:stick"
+                }
+            ],
+            "result": {
+                "item": "minecraft:bamboo",
+                "count": 2
+            }
+        }
+    },
+    "w_to_m": {
+        "type": "origins:recipe",
+        "recipe": {
+            "id": "rporigins:craftable/w_to_m",
+            "type": "minecraft:crafting_shapeless",
+            "ingredients": [{
+                    "item": "minecraft:wheat_seeds"
+                },
+                {
+                    "item": "minecraft:wheat_seeds"
+                }
+            ],
+            "result": {
+                "item": "minecraft:melon_seeds",
+                "count": 2
+            }
+        }
+    },
+    "m_to_p": {
+        "type": "origins:recipe",
+        "recipe": {
+            "id": "rporigins:craftable/m_to_p",
+            "type": "minecraft:crafting_shapeless",
+            "ingredients": [{
+                    "item": "minecraft:melon_seeds"
+                },
+                {
+                    "item": "minecraft:melon_seeds"
+                }
+            ],
+            "result": {
+                "item": "minecraft:pumpkin_seeds",
+                "count": 2
+            }
+        }
+    },
+    "p_to_b": {
+        "type": "origins:recipe",
+        "recipe": {
+            "id": "rporigins:craftable/p_to_b",
+            "type": "minecraft:crafting_shapeless",
+            "ingredients": [{
+                "item": "minecraft:pumpkin_seeds"
+            }, {
+                "item": "minecraft:pumpkin_seeds"
+            }],
+            "result": {
+                "item": "minecraft:beetroot_seeds",
+                "count": 2
+            }
+        }
+    },
+    "b_to_c": {
+        "type": "origins:recipe",
+        "recipe": {
+            "id": "rporigins:craftable/b_to_c",
+            "type": "minecraft:crafting_shapeless",
+            "ingredients": [{
+                "item": "minecraft:beetroot_seeds"
+            }, {
+                "item": "minecraft:beetroot_seeds"
+            }],
+            "result": {
+                "item": "minecraft:cocoa_beans",
+                "count": 2
+            }
+        }
+    },
+    "c_to_w": {
+        "type": "origins:recipe",
+        "recipe": {
+            "id": "rporigins:craftable/c_to_w",
+            "type": "minecraft:crafting_shapeless",
+            "ingredients": [{
+                    "item": "minecraft:cocoa_beans"
+                },
+                {
+                    "item": "minecraft:cocoa_beans"
+                }
+            ],
+            "result": {
+                "item": "minecraft:wheat_seeds",
+                "count": 2
+            }
+        }
+    },
+    "oak_to_spruce": {
+        "type": "origins:recipe",
+        "recipe": {
+            "id": "rporigins:craftable/o_to_s",
+            "type": "minecraft:crafting_shapeless",
+            "ingredients": [{
+                "item": "minecraft:oak_sapling"
+            }],
+            "result": {
+                "item": "minecraft:spruce_sapling"
+            }
+        }
+    },
+    "spruce_to_birch": {
+        "type": "origins:recipe",
+        "recipe": {
+            "id": "rporigins:craftable/s_to_b",
+            "type": "minecraft:crafting_shapeless",
+            "ingredients": [{
+                "item": "minecraft:spruce_sapling"
+            }],
+            "result": {
+                "item": "minecraft:birch_sapling"
+            }
+        }
+    },
+    "birch_to_jungle": {
+        "type": "origins:recipe",
+        "recipe": {
+            "id": "rporigins:craftable/b_to_j",
+            "type": "minecraft:crafting_shapeless",
+            "ingredients": [{
+                "item": "minecraft:birch_sapling"
+            }],
+            "result": {
+                "item": "minecraft:jungle_sapling"
+            }
+        }
+    },
+    "jungle_to_acacia": {
+        "type": "origins:recipe",
+        "recipe": {
+            "id": "rporigins:craftable/j_to_a",
+            "type": "minecraft:crafting_shapeless",
+            "ingredients": [{
+                "item": "minecraft:jungle_sapling"
+            }],
+            "result": {
+                "item": "minecraft:acacia_sapling"
+            }
+        }
+    },
+    "acacia_to_dark_oak": {
+        "type": "origins:recipe",
+        "recipe": {
+            "id": "rporigins:craftable/a_to_do",
+            "type": "minecraft:crafting_shapeless",
+            "ingredients": [{
+                "item": "minecraft:acacia_sapling"
+            }],
+            "result": {
+                "item": "minecraft:dark_oak_sapling"
+            }
+        }
+    },
+    "dark_oak_to_oak": {
+        "type": "origins:recipe",
+        "recipe": {
+            "id": "rporigins:craftable/do_to_o",
+            "type": "minecraft:crafting_shapeless",
+            "ingredients": [{
+                "item": "minecraft:dark_oak_sapling"
+            }],
+            "result": {
+                "item": "minecraft:oak_sapling"
+            }
+        }
+    },
+    "name": "Druidcraft",
+    "description": "You are able to swap out seeds and saplings, along with crafting sugar cane, cactus, and bamboo."
+}

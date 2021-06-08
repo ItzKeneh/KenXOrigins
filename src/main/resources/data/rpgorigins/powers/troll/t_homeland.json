@@ -1,0 +1,7 @@
+{
+    "type": "origins:modify_player_spawn",
+    "dimension": "minecraft:overworld",
+    "biome": "minecraft:snowy_taiga_mountains",
+    "name": "Troll Homeland",
+    "description": "You spawn in a snowy taiga mountains biome."
+}

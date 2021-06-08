@@ -1,0 +1,10 @@
+{
+    "type": "origins:modify_exhaustion",
+    "modifier": {
+      "name": "Less exhaustion from small appetite",
+      "value": -0.8,
+      "operation": "multiply_base"
+    },
+    "name": "Light Stomach", 
+    "description": "You exhaust way less."
+  }
