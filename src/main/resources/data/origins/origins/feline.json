@@ -1,0 +1,9 @@
+{
+	"icon": {
+		"item": "minecraft:player_head"
+	},
+    "unchoosable": true,
+	"order": 6,
+	"impact": 0,
+	"loading_priority": 11
+}

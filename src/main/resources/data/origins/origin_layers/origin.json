@@ -1,0 +1,38 @@
+{
+  "replace": false,
+  "order": 0,
+  "enabled": true,
+  "origins": [
+    "origins:arachnid",
+    "origins:avian",
+    "origins:blazeborn",
+    "origins:elytrian",
+    "origins:enderian",
+    "origins:feline",
+    "origins:merling",
+    "origins:phantom",
+    "origins:shulk",
+    "extraorigins:floran",
+    "extraorigins:inchling",
+    "extraorigins:piglin",
+    "rpgorigins:elf",
+    "rpgorigins:dryad",
+    "rpgorigins:harpy",
+    "rpgorigins:tiefling",
+    "rpgorigins:imp",
+    "rpgorigins:phoenix",
+    "rpgorigins:orc",
+    "rpgorigins:goblin",
+    "rpgorigins:troll",
+    "rpgorigins:triton",
+    "rpgorigins:croak",
+    "rpgorigins:aquarian",
+    "rpgorigins:nimbus",
+    "rpgorigins:solus"
+  ],
+  "allow_random": true,
+  "exclude_random": [
+    "origins:human"
+  ],
+  "allow_random_unchoosable": false
+}
