@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "rporigins",
+  "version": "4.0",
+
+  "name": "Rp Origins",
+  "description": "An Origins addon that replaces the default origins with new ones. (Requires Pehkui and Extra Origins)",
+  "authors": [
+    "Keneh#9279"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/"
+  },
+
+  "license": "CC0-1.0",
+  "icon": "assets/rporigins/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.itzkeneh.rporigins.RpOrigins"
+    ]
+  },
+  "mixins": [
+    "rporigins.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.11.3",
+    "fabric": "*", 
+    "minecraft": "1.16.5",
+    "origins" : ">0.7.0",
+    "pehkui" : "*",
+    "extraorigins" : "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
