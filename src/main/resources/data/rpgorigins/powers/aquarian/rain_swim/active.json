@@ -1,0 +1,31 @@
+{
+    "type": "origins:multiple",
+    "active": {
+        "type": "origins:swimming",
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                    "type": "origins:resource",
+                    "resource": "*:aquarian/rain_swim/toggle_resource",
+                    "comparison": ">=",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:aquarian/rain_swim/rain_regen_resource",
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:in_block",
+                    "block_condition": {
+                        "type": "origins:block",
+                        "block": "minecraft:air"
+                    }
+                }
+            ]
+        }
+    },
+    "name": "Rain Swimming",
+    "description": "While it rains you can swim quickly through it, this only works with pure rain, meaning your rain cloud doesn't count! Only for a limited time. Toggle with primary while in rain."
+}

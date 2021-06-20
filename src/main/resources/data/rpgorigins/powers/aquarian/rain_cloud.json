@@ -1,0 +1,141 @@
+{
+    "type": "origins:multiple",
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 900,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+            "bar_index": 12,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "rpgorigins:aquarian/rain_cloud_resource",
+                "comparison": "<",
+                "compare_to": 900
+            }
+        },
+        "start_value": 900
+    },
+    "resource_hidden": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "rain_cloud_active": {
+        "type": "origins:active_self",
+        "hud_render": {
+            "should_render": false
+        },
+        "key": {
+            "key": "key.hotbar.3"
+        },
+        "cooldown": 0,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [{
+                    "type": "origins:execute_command",
+                    "command": "execute at @s run playsound minecraft:entity.lightning_bolt.thunder master @a[distance=..4] ~ ~ ~ 0.3 2",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "rpgorigins:aquarian/rain_cloud_resource",
+                    "change": -900
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "rpgorigins:aquarian/rain_cloud_resource_hidden",
+                    "change": 1
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "rpgorigins:aquarian/aquamancer/magic_resource",
+                    "change": -80
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "rpgorigins:aquarian/rain_cloud_resource",
+                    "comparison": ">=",
+                    "compare_to": 900
+                },
+                {
+                    "type": "origins:sneaking"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "rpgorigins:aquarian/aquamancer/magic_resource",
+                    "comparison": ">=",
+                    "compare_to": 80
+                }
+            ] 
+        }
+    },
+    "rain_cloud_cooldown_regen": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "rpgorigins:aquarian/rain_cloud_resource",
+            "change": 1
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "rpgorigins:aquarian/rain_cloud_resource",
+            "comparison": "<",
+            "compare_to": 900
+        }
+    },
+    "rain_cloud_particle": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [{
+                    "type": "origins:execute_command",
+                    "command": "execute at @s run particle minecraft:splash ~ ~2.5 ~ 0.3 0 0.3 0 5",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "particle minecraft:cloud ~ ~2.7 ~ 0.4 0.1 0.4 0 5",
+                    "permission_level": 4
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "rpgorigins:aquarian/rain_cloud_resource_hidden",
+            "comparison": ">=",
+            "compare_to": 1
+        }
+    },
+    "rain_cloud_ending": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [{
+                "type": "origins:change_resource",
+                "resource": "rpgorigins:aquarian/rain_cloud_resource_hidden",
+                "change": -1
+            }]
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "rpgorigins:aquarian/rain_cloud_resource",
+            "comparison": ">=",
+            "compare_to": 400
+        }
+    },
+    "name": "[3] Summon Rain Cloud",
+    "description": "You can summon a rain cloud that hydrates you canceling out dehydration, feeds you, and regenerates your aquamancer bar. [Water Bar: 80]"
+}

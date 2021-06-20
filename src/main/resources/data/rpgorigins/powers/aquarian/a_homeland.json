@@ -1,0 +1,91 @@
+{
+    "type": "origins:multiple",
+    "homeland_spawn": {
+        "type": "origins:modify_player_spawn",
+        "dimension": "minecraft:overworld",
+        "biome": "minecraft:river"
+    },
+    "water_stats": {
+        "type": "origins:stacking_status_effect",
+        "min_stacks": 0,
+        "max_stacks": 1,
+        "duration_per_stack": 20,
+        "effects": [{
+            "effect": "minecraft:water_breathing",
+            "amplifier": 0,
+            "is_ambient": true,
+            "show_particles": false,
+            "show_icon": false
+        }],
+        "condition": {
+            "type": "origins:submerged_in",
+            "fluid": "minecraft:water"
+        }
+    },
+    "model": {
+        "type": "origins:model_color",
+        "red": 0.4,
+        "green": 0.6
+    },
+    "water_walk": {
+        "type": "origins:walk_on_fluid",
+        "fluid": "minecraft:water",
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                    "type": "origins:fluid_height",
+                    "fluid": "minecraft:water",
+                    "comparison": "<=",
+                    "compare_to": 0.4
+                },
+                {
+                    "type": "origins:sneaking",
+                    "inverted": true
+                }
+            ]
+
+        }
+    },
+    "water_walk2": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.movement_speed",
+            "operation": "addition",
+            "value": 0.07,
+            "name": "Increased sprinting speed"
+        },
+        "tick_rate": 18,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                    "type": "origins:fluid_height",
+                    "fluid": "minecraft:water",
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:sneaking",
+                    "inverted": true
+                }
+            ]
+        }
+    },
+    "water_vision": {
+        "type": "origins:toggle_night_vision",
+        "strength": 1.0,
+        "condition": {
+            "type": "origins:submerged_in",
+            "fluid": "minecraft:water"
+        }
+    },
+    "fast_swim": {
+        "type": "origins:modify_swim_speed",
+        "modifier": {
+            "name": "Additional swim speed",
+            "value": 2.3,
+            "operation": "multiply_base"
+        }
+    },
+    "name": "Aquarian Homeland",
+    "description": "You spawn in a river biome."
+}

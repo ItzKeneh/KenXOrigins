@@ -1,0 +1,50 @@
+{
+    "type": "origins:multiple",
+    "health_nether": {
+        "type": "origins:conditioned_attribute",
+        "tick_rate": 20,
+        "modifier": {
+            "name": "Health",
+            "attribute": "minecraft:generic.max_health",
+            "operation": "addition",
+            "value": -4
+        },
+        "condition": {
+            "type": "origins:dimension",
+            "dimension": "minecraft:the_nether"
+        }
+    },
+    "shrink": {
+        "type": "origins:action_over_time",
+        "interval": 25,
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [{
+                    "condition": {
+                        "type": "origins:dimension",
+                        "dimension": "minecraft:the_nether"
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "execute as @s run scale set extraorigins:modify_size 0.6",
+                        "permission_level": 4
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:dimension",
+                        "dimension": "minecraft:the_nether",
+                        "inverted": true
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "execute as @s run scale set extraorigins:modify_size 1",
+                        "permission_level": 4
+                    }
+                }
+            ]
+        }
+    },
+    "name": "Evaporate",
+    "description": "When in the nether you evaporate, losing 2 hearts and shrinking"
+}
