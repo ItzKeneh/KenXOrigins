@@ -1,0 +1,156 @@
+{
+    "type": "origins:multiple",
+    "bar": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 300,
+        "hud_render": {
+            "should_render": true,
+            "bar_index": 2
+        },
+        "start_value": 300
+    },
+    "respawn_mana": {
+        "type": "origins:action_on_callback",
+        "entity_action_respawned": {
+            "type": "origins:change_resource",
+            "resource": "*:solus/solar_magic/mana_bar",
+            "change": 75
+        },
+        "entity_action_removed": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute as @s at @s run function rpgorigins:kill_solar_guardian",
+                    "permission_level": 4
+                }
+            ]
+        }
+    },
+    "regen_bar": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [{
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [{
+                                "type": "origins:daytime"
+                            },
+                            {
+                                "type": "origins:exposed_to_sky"
+                            },
+                            {
+                                "type": "origins:in_rain",
+                                "inverted": true
+                            },
+                            {
+                                "type": "origins:fluid_height",
+                                "fluid": "minecraft:water",
+                                "comparison": "<=",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:biome",
+                                "condition": {
+                                    "type": "origins:temperature",
+                                    "comparison": "<=",
+                                    "compare_to": 0.5
+                                }
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:solus/solar_magic/mana_bar",
+                        "change": 1
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [{
+                                "type": "origins:daytime"
+                            },
+                            {
+                                "type": "origins:exposed_to_sky"
+                            },
+                            {
+                                "type": "origins:in_rain",
+                                "inverted": true
+                            },
+                            {
+                                "type": "origins:fluid_height",
+                                "fluid": "minecraft:water",
+                                "comparison": "<=",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:biome",
+                                "condition": {
+                                    "type": "origins:and",
+                                    "conditions": [{
+                                            "type": "origins:temperature",
+                                            "comparison": ">=",
+                                            "compare_to": 0.6
+                                        },
+                                        {
+                                            "type": "origins:temperature",
+                                            "comparison": "<=",
+                                            "compare_to": 0.9
+                                        }
+                                    ]
+
+                                }
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:solus/solar_magic/mana_bar",
+                        "change": 2
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [{
+                                "type": "origins:daytime"
+                            },
+                            {
+                                "type": "origins:exposed_to_sky"
+                            },
+                            {
+                                "type": "origins:in_rain",
+                                "inverted": true
+                            },
+                            {
+                                "type": "origins:fluid_height",
+                                "fluid": "minecraft:water",
+                                "comparison": "<=",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:biome",
+                                "condition": {
+                                    "type": "origins:temperature",
+                                    "comparison": ">=",
+                                    "compare_to": 1
+                                }
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:solus/solar_magic/mana_bar",
+                        "change": 4
+                    }
+                }
+            ]
+        }
+    },
+    "name": "Solar Magic",
+    "description": "You have mastered the power of the sun. You can store solar power into yourself (Max storage is 300), only regenerating when you are in the sun, and regenerates faster in hotter biomes. To execute a spell you must sneak and press a hotbar keybind. (Example: Shift+1)"
+}

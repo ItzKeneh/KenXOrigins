@@ -1,0 +1,108 @@
+{
+    "type": "origins:multiple",
+    "prevent_food": {
+        "type": "origins:prevent_item_use",
+        "item_condition": {
+            "type": "origins:and",
+            "conditions": [{
+                    "type": "origins:ingredient",
+                    "ingredient": {
+                        "tag": "rpgorigins:energetic_foods"
+                    },
+                    "inverted": true
+                },
+                {
+                    "type": "origins:food"
+                }
+            ]
+        }
+    },
+    "more_hunger": {
+        "type": "origins:modify_food",
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "tag": "rpgorigins:energetic_foods"
+            }
+        },
+        "food_modifier": {
+            "name": "Increased food points",
+            "operation": "addition",
+            "value": 5.0
+        },
+        "saturation_modifier": {
+            "name": "Increased saturation points",
+            "operation": "addition",
+            "value": 1.5
+        }
+    },
+    "regenerate_food": {
+        "type": "origins:action_over_time",
+        "interval": 60,
+        "entity_action": {
+            "type": "origins:feed",
+            "food": 1,
+            "saturation": 0
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                    "type": "origins:daytime"
+                },
+                {
+                    "type": "origins:exposed_to_sky"
+                },
+                {
+                    "type": "origins:in_rain",
+                    "inverted": true
+                },
+                {
+                    "type": "origins:fluid_height",
+                    "fluid": "minecraft:water",
+                    "comparison": "<=",
+                    "compare_to": 0
+                }
+            ]
+        }
+    },
+    "prevent_healing": {
+        "type": "origins:disable_regen"
+    },
+    "heal_override": {
+        "type": "origins:action_over_time",
+        "interval": 30,
+        "entity_action": {
+            "type": "origins:heal",
+            "amount": 1
+        },
+        "condition": {
+            "type": "origins:food_level",
+            "comparison": ">",
+            "compare_to": 0
+        }
+    },
+    "exhaust_when_healing": {
+        "type": "origins:action_over_time",
+        "interval": 30,
+        "entity_action": {
+            "type": "origins:exhaust",
+            "amount": 2
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                    "type": "origins:food_level",
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:relative_health",
+                    "comparison": "<",
+                    "compare_to": 1
+                }
+            ]
+        }
+    },
+    "name": "Energetic Diet",
+    "description": "You very slowly, feed from the sun, and energetic foods like sugar, cookies, and cake. You do not feed from the sun while it's raining or if you're touching water, and the energetic foods give way more saturation than normal."
+}

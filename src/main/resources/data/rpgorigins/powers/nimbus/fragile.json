@@ -1,0 +1,34 @@
+{
+  "type": "origins:multiple",
+  "health1": {
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 25,
+    "modifier": {
+      "name": "Health Not Nether",
+      "attribute": "minecraft:generic.max_health",
+      "value": -12,
+      "operation": "addition"
+    },
+    "condition": {
+      "type": "origins:dimension",
+      "dimension": "minecraft:the_nether",
+      "inverted": true
+    }
+  },
+  "health2": {
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 25,
+    "modifier": {
+      "name": "Health Nether",
+      "attribute": "minecraft:generic.max_health",
+      "value": -10,
+      "operation": "addition"
+    },
+    "condition": {
+      "type": "origins:dimension",
+      "dimension": "minecraft:the_nether"
+    }
+  },
+  "name": "Very Fragile",
+  "description": "You are as fragile as a cloud, leaving you with only 4 hearts in your normal form, 5 when in sulfurus form."
+}

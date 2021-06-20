@@ -1,0 +1,12 @@
+{
+    "type": "origins:elytra_flight",
+    "render_elytra": true,
+    "condition": {
+        "type": "origins:resource",
+        "resource": "*:solus/solar_magic/mana_bar",
+        "comparison": ">=",
+        "compare_to": 60
+    },
+    "name": "Solar Wings",
+    "description": "You are equipped with Solar Wings, these wings are only available to you if you have at least 60 solar power stored."
+}

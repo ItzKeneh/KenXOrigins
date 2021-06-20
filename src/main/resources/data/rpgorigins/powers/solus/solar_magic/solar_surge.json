@@ -1,0 +1,40 @@
+{
+    "type": "origins:active_self",
+    "hud_render": {
+        "should_render": false
+    },
+    "key": {
+        "key": "key.hotbar.2"
+    },
+    "cooldown": 800,
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "command": "execute as @s run function rpgorigins:solar_surge",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:change_resource",
+                "resource": "*:solus/solar_magic/mana_bar",
+                "change": -70
+            }
+        ]
+    },
+    "condition": {
+        "type": "origins:and",
+        "conditions": [{
+                "type": "origins:resource",
+                "resource": "*:solus/solar_magic/mana_bar",
+                "comparison": ">=",
+                "compare_to": 70
+            },
+            {
+                "type": "origins:sneaking"
+            }
+        ]
+    },
+    "name": "[2] Solar Surge",
+    "description": "Use the powers of the sun to empower yourself, giving speed, fire resistance, and glowing. [Solar Power: 70]"
+}

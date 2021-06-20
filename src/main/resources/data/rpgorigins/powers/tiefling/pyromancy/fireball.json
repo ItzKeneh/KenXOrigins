@@ -1,0 +1,85 @@
+{
+    "type": "origins:multiple",
+    "fireball_1": {
+        "type": "origins:fire_projectile",
+        "entity_type": "minecraft:small_fireball",
+        "tag": "{NoGravity:1b}",
+        "cooldown": 0,
+        "speed": 0.2,
+        "sound": "item.firecharge.use",
+        "hud_render": {
+            "should_render": false
+        },
+        "key": {
+            "key": "key.hotbar.1"
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                    "type": "origins:resource",
+                    "resource": "*:tiefling/pyromancy/mana_bar",
+                    "comparison": ">=",
+                    "compare_to": 20
+                },
+                {
+                    "type": "origins:sneaking"
+                }
+            ]
+        }
+    },
+    "fireball_2": {
+        "type": "origins:active_self",
+        "hud_render": {
+            "should_render": false
+        },
+        "key": {
+            "key": "key.hotbar.1"
+        },
+        "cooldown": 0,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [{
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:entity.ghast.shoot",
+                    "volume": 0.65,
+                    "pitch": 0.5
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:entity.evoker.cast_spell",
+                    "volume": 1,
+                    "pitch": 1.6
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 1,
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:tiefling/pyromancy/mana_bar",
+                        "change": -20
+                    }
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute at @s run particle dust .8 .6 .1 1 ~ ~.2 ~ 0.65 0 0.65 0 200",
+                    "permission_level": 4
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                    "type": "origins:resource",
+                    "resource": "*:tiefling/pyromancy/mana_bar",
+                    "comparison": ">=",
+                    "compare_to": 20
+                },
+                {
+                    "type": "origins:sneaking"
+                }
+            ]
+        }
+    },
+    "name": "[1] Fireball",
+    "description": "Your most basic of spells, cast a fireball out of your hands! [Mana: 20]"
+}

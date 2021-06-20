@@ -1,0 +1,114 @@
+{
+    "type": "origins:multiple",
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 20,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "totem_activate": {
+        "type": "origins:active_self",
+        "hud_render": {
+            "should_render": false
+        },
+        "key": {
+            "key": "key.hotbar.4"
+        },
+        "cooldown": 400,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [{
+                    "type": "origins:execute_command",
+                    "command": "execute as @s run function rpgorigins:summon_flare_totem",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:tiefling/pyromancy/mana_bar",
+                    "change": -100
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:tiefling/pyromancy/flare_totem_resource",
+                    "change": 20
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:entity.evoker.prepare_attack",
+                    "volume": 1,
+                    "pitch": 2
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute at @s run particle dust 0.894 0.659 0.059 1 ~ ~ ~ 0.65 0 0.65 0 200",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 300,
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [{
+                                "type": "origins:execute_command",
+                                "command": "execute as @s run function rpgorigins:kill_flare_totem",
+                                "permission_level": 4
+                            },
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:block.beacon.deactivate",
+                                "volume": 0.5,
+                                "pitch": 0.7
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                    "type": "origins:resource",
+                    "resource": "*:tiefling/pyromancy/mana_bar",
+                    "comparison": ">=",
+                    "compare_to": 100
+                },
+                {
+                    "type": "origins:sneaking"
+                }
+            ]
+        }
+    },
+    "active_timer": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:tiefling/pyromancy/flare_totem_resource",
+            "change": -1
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:tiefling/pyromancy/flare_totem_resource",
+            "comparison": ">",
+            "compare_to": 0
+        }
+    },
+    "active_timer_2": {
+        "type": "origins:action_over_time",
+        "interval": 70,
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "execute as @e[tag=inFlareTotem,tag=!totemSelf] at @s run summon minecraft:small_fireball ~ ~3 ~ {Motion:[0.0,-10.0,0.0]}"
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:tiefling/pyromancy/flare_totem_resource",
+            "comparison": ">",
+            "compare_to": 0
+        }
+    },
+    "name": "[4] Flare Totem",
+    "description": "Summon a Flare Totem; When entities other than you enter the radius of the totem, they are damaged, and set on fire. [Mana: 100]"
+}

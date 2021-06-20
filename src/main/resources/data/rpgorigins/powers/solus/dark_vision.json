@@ -1,0 +1,22 @@
+{
+    "type": "origins:night_vision",
+    "strength": 0.3,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:submerged_in",
+          "fluid": "minecraft:water",
+          "inverted": true
+        },
+        {
+          "type": "origins:resource",
+          "resource": "*:solus/solar_magic/mana_bar",
+          "comparison": ">=",
+          "compare_to": 15
+        }
+      ]
+    },
+    "name": "Solar Vision",
+    "description": "You can see better in the dark only if you have at least 15 solar power stored."
+  }

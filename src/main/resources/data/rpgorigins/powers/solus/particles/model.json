@@ -1,0 +1,57 @@
+{
+    "type": "origins:multiple",
+    "callback": {
+        "type": "origins:action_on_callback",
+        "entity_action_removed": {
+            "type": "origins:and",
+            "actions": [{
+                    "type": "origins:execute_command",
+                    "command": "execute as @s at @s run function rpgorigins:solar_guardian_kill",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute as @s run scale reset",
+                    "permission_level": 4
+                }
+            ]
+        }
+    },
+    "model": {
+        "type": "origins:model_color",
+        "blue": 0,
+        "green": 0.75,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:solus/solar_magic/mana_bar",
+            "comparison": ">=",
+            "compare_to": 10
+        }
+    },
+    "short": {
+        "type": "origins:action_over_time",
+        "interval": 25,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [{
+                    "type": "origins:execute_command",
+                    "command": "execute as @s run scale set extraorigins:modify_size 0.8",
+                    "permission_level": 4
+                }
+            ]
+        }
+    },
+    "default_particles": {
+        "type": "origins:particle",
+        "particle": "minecraft:enchanted_hit",
+        "frequency": 23,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:solus/solar_magic/mana_bar",
+            "comparison": ">=",
+            "compare_to": 10
+        }
+    },
+    "name": "Solar Appearance",
+    "description": "You are a little shorter, along with emiting electric particles and having solar skin. The particles and skin only show if you have at least 10 solar power stored."
+}

@@ -1,0 +1,17 @@
+{
+    "type": "origins:active_self",
+    "cooldown": 200,
+    "key": "secondary",
+    "hud_render": {
+        "should_render": true,
+        "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+        "bar_index": 15
+    },
+    "entity_action": {
+        "type": "origins:execute_command",
+        "command": "function shoot:start_ray",
+        "permission_level": 4
+    },
+    "name": "Triton's Beam",
+    "description": "You've mastered the technique of the Guardians and by pressing the secondary key you can shoot a water beam! (10 second cooldown)"
+}

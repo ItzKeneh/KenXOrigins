@@ -1,0 +1,12 @@
+{
+    "type": "origins:attacker_action_when_hit",
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "effect give @s wither 3 1 true",
+      "permission_level": 4
+    },
+    "cooldown": 1,
+    "name": "Accused Blood",
+    "description": "Enemies gain withering when hitting you."
+  }
+  

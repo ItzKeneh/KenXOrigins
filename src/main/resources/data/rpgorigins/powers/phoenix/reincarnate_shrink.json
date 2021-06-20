@@ -1,0 +1,81 @@
+{
+    "type": "origins:multiple",
+    "shrink": {
+        "type": "origins:action_over_time",
+        "interval": 16,
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [{
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:phoenix/reincarnate_reincarnate_resource",
+                        "comparison": "==",
+                        "compare_to": 3
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "execute as @s run scale set extraorigins:modify_size 1",
+                        "permission_level": 4
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:phoenix/reincarnate_reincarnate_resource",
+                        "comparison": "==",
+                        "compare_to": 2
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "execute as @s run scale set extraorigins:modify_size 0.8",
+                        "permission_level": 4
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:phoenix/reincarnate_reincarnate_resource",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "execute as @s run scale set extraorigins:modify_size 0.6",
+                        "permission_level": 4
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:phoenix/reincarnate_reincarnate_resource",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "execute as @s run scale set extraorigins:modify_size 0.4",
+                        "permission_level": 4
+                    }
+                }
+            ]
+        }
+    },
+    "callback": {
+        "type": "origins:action_on_callback",
+        "entity_action_removed": {
+            "type": "origins:and",
+            "actions": [{
+                    "type": "origins:execute_command",
+                    "command": "execute as @s run scale reset",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "attribute @s minecraft:generic.max_health base set 20",
+                    "permission_level": 4
+                }
+            ]
+        }
+    },
+    "hidden": "true"
+}

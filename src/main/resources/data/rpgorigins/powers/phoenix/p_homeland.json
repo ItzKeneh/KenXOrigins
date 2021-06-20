@@ -1,0 +1,7 @@
+{
+    "type": "origins:modify_player_spawn",
+    "dimension": "the_nether",
+    "biome": "minecraft:basalt_deltas",
+    "name": "Phoenix Homeland",
+    "description": "You spawn in the basalt deltas."
+}

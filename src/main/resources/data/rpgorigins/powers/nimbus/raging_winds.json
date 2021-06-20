@@ -1,0 +1,90 @@
+{
+    "type": "origins:multiple",
+    "armor1": {
+        "type": "origins:conditioned_attribute",
+        "tick_rate": 25,
+        "modifier": {
+            "name": "Armor Increase Not Nether",
+            "attribute": "minecraft:generic.armor",
+            "value": 2,
+            "operation": "addition"
+        },
+        "condition": {
+            "type": "origins:dimension",
+            "dimension": "minecraft:the_nether",
+            "inverted": true
+        }
+    },
+    "armor2": {
+        "type": "origins:conditioned_attribute",
+        "tick_rate": 25,
+        "modifier": {
+            "name": "Armor Increase Nether",
+            "attribute": "minecraft:generic.armor",
+            "value": 4,
+            "operation": "addition"
+        },
+        "condition": {
+            "type": "origins:dimension",
+            "dimension": "minecraft:the_nether"
+        }
+    },
+    "resistance": {
+        "type": "origins:action_over_time",
+        "interval": 16,
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [{
+                    "condition": {
+                        "type": "origins:dimension",
+                        "dimension": "minecraft:the_nether",
+                        "inverted": true
+                    },
+                    "action": {
+                        "type": "origins:apply_effect",
+                        "effect": {
+                            "effect": "minecraft:resistance",
+                            "duration": 40,
+                            "is_ambient": true,
+                            "show_icon": false,
+                            "show_particles": false
+                        }
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:dimension",
+                        "dimension": "minecraft:the_nether"
+                    },
+                    "action": {
+                        "type": "origins:apply_effect",
+                        "effect": {
+                            "effect": "minecraft:resistance",
+                            "amplifier": 1,
+                            "duration": 40,
+                            "is_ambient": true,
+                            "show_icon": false,
+                            "show_particles": false
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "damage": {
+        "type": "origins:conditioned_attribute",
+        "tick_rate": 25,
+        "modifier": {
+            "name": "Damage Increase Nether",
+            "attribute": "minecraft:generic.attack_damage",
+            "value": 4,
+            "operation": "addition"
+        },
+        "condition": {
+            "type": "origins:dimension",
+            "dimension": "minecraft:the_nether"
+        }
+    },
+    "name": "Raging Winds",
+    "description": "The wind protects you! You always have 1 full armor point, and have resistance 1 when in your normal form. These double when in your sulfurus form along with dealing more damage."
+}

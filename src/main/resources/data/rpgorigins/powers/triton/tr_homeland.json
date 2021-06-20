@@ -1,0 +1,82 @@
+{
+    "type": "origins:multiple",
+    "spawn_homeland": {
+        "type": "origins:modify_player_spawn",
+        "dimension": "minecraft:overworld",
+        "biome": "minecraft:ocean"
+    },
+    "out_of_water_debuff": {
+        "type": "origins:stacking_status_effect",
+        "min_stacks": -20,
+        "max_stacks": 40,
+        "duration_per_stack": 1,
+        "effect": {
+            "effect": "minecraft:weakness",
+            "amplifier": 1,
+            "is_ambient": true,
+            "show_particles": false,
+            "show_icon": false
+        },
+        "condition": {
+            "type": "origins:fluid_height",
+            "fluid": "minecraft:water",
+            "comparison": "==",
+            "compare_to": 0
+        }
+    },
+    "model": {
+        "type": "origins:model_color",
+        "red": 0.4,
+        "green": 0.6
+    },
+    "homeland_buff": {
+        "type": "origins:stacking_status_effect",
+        "min_stacks": 0,
+        "max_stacks": 1,
+        "duration_per_stack": 19,
+        "effect": {
+            "effect": "minecraft:strength",
+            "amplifier": 0,
+            "is_ambient": true,
+            "show_particles": false,
+            "show_icon": false
+        },
+        "condition": {
+            "type": "origins:biome",
+            "condition": {
+                "type": "origins:category",
+                "category": "ocean"
+            }
+        }
+    },
+    "homeland_swim": {
+        "type": "origins:modify_swim_speed",
+        "modifier": {
+            "operation": "addition",
+            "value": 0.03
+        },
+        "condition": {
+            "type": "origins:biome",
+            "condition": {
+                "type": "origins:category",
+                "category": "ocean"
+            }
+        }
+    },
+    "normal_swim": {
+        "type": "origins:modify_swim_speed",
+        "modifier": {
+            "operation": "multiply_base",
+            "value": 2.3
+        }
+    },
+    "starting_stuff": {
+        "type": "origins:starting_equipment",
+        "stacks": [{
+            "item": "minecraft:glass_bottle",
+            "amount": 2
+        }]
+    },
+    "name": "Triton Homeland",
+    "description": "You spawn in an ocean biome and when in an ocean biome you gain strength and swim faster, all other bodies of water will not give you these effects."
+}

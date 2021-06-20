@@ -1,0 +1,76 @@
+{
+    "type": "origins:multiple",
+    "walk_on_lava_1": {
+        "type": "origins:walk_on_fluid",
+        "fluid": "minecraft:lava",
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                    "type": "origins:fluid_height",
+                    "fluid": "minecraft:lava",
+                    "comparison": "<=",
+                    "compare_to": 0.4
+                },
+                {
+                    "type": "origins:sneaking",
+                    "inverted": true
+                }
+            ]
+
+        }
+    },
+    "model": {
+        "type": "origins:model_color",
+        "blue": 0.06,
+        "green": 0.35
+    },
+    "walk_on_lava_2": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.movement_speed",
+            "operation": "addition",
+            "value": 0.07,
+            "name": "Increased sprinting speed"
+        },
+        "tick_rate": 18,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                    "type": "origins:fluid_height",
+                    "fluid": "minecraft:lava",
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:sneaking",
+                    "inverted": true
+                }
+            ]
+        }
+    },
+    "burn_fist": {
+        "type": "origins:target_action_on_hit",
+        "entity_action": {
+            "type": "origins:set_on_fire",
+            "duration": 3
+        },
+        "cooldown": 80,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "exhaust_in_overworld": {
+        "type": "origins:modify_exhaustion",
+        "modifier": {
+            "name": "Hangy",
+            "value": 1.3,
+            "operation": "multiply_base"
+        },
+        "condition": {
+            "type": "origins:dimension",
+            "dimension": "minecraft:the_nether",
+            "inverted": true
+        }
+    },
+    "hidden": true
+}

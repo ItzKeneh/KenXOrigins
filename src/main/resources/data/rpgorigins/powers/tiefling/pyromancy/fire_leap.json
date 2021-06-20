@@ -1,0 +1,62 @@
+{
+    "type": "origins:active_self",
+    "hud_render": {
+        "should_render": false
+    },
+    "key": {
+        "key": "key.hotbar.2"
+    },
+    "cooldown": 30,
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [{
+                "type": "origins:add_velocity",
+                "z": 1,
+                "space": "local",
+                "set": true
+            },
+            {
+                "type": "origins:add_velocity",
+                "y": 0.3,
+                "space": "world",
+                "set": false
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "execute at @s run particle minecraft:flame ~ ~ ~ 0.3 0 0.3 0 50",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:change_resource",
+                "resource": "*:tiefling/pyromancy/mana_bar",
+                "change": -30
+            },
+            {
+                "type": "origins:play_sound",
+                "sound": "minecraft:entity.ghast.shoot",
+                "volume": 1,
+                "pitch": 0.7
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "execute at @s run particle dust 0.994 0.659 0.059 1 ~ ~ ~ 0.65 0 0.65 0 200",
+                "permission_level": 4
+            }
+        ]
+    },
+    "condition": {
+        "type": "origins:and",
+        "conditions": [{
+                "type": "origins:resource",
+                "resource": "*:tiefling/pyromancy/mana_bar",
+                "comparison": ">=",
+                "compare_to": 30
+            },
+            {
+                "type": "origins:sneaking"
+            }
+        ]
+    },
+    "name": "[2] Fire Leap",
+    "description": "Another simple spell to help with moving around. Leap forwards! [Mana: 30]"
+}

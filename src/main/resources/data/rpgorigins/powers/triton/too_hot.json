@@ -1,0 +1,114 @@
+{
+    "type": "origins:multiple",
+    "raise_timer_from_potions": {
+        "type": "origins:action_on_item_use",
+        "hidden": true,
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "minecraft:potion"
+            }
+        },
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:triton/too_hot_resource",
+            "change": 60
+        }
+    },
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 100,
+        "hud_render": {
+            "should_render": true,
+            "bar_index": 7,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:triton/too_hot_resource",
+                "comparison": "<",
+                "compare_to": 100
+            }
+        },
+        "start_value": 100
+    },
+    "timer": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:triton/too_hot_resource",
+            "change": -1
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                    "type": "origins:biome",
+                    "condition": {
+                        "type": "origins:temperature",
+                        "comparison": ">=",
+                        "compare_to": 1.1
+                    }
+                },
+                {
+                    "type": "origins:fluid_height",
+                    "fluid": "minecraft:water",
+                    "comparison": "==",
+                    "compare_to": 0
+                }
+            ]
+        }
+    },
+    "timer_2": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:triton/too_hot_resource",
+            "change": 1
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                    "type": "origins:or",
+                    "conditions": [{
+                            "type": "origins:biome",
+                            "condition": {
+                                "type": "origins:temperature",
+                                "comparison": "<=",
+                                "compare_to": 1
+                            }
+                        },
+                        {
+                            "type": "origins:fluid_height",
+                            "fluid": "minecraft:water",
+                            "comparison": ">",
+                            "compare_to": 0
+                        },
+                        {
+                            "type": "origins:in_rain"
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:triton/too_hot_resource",
+                    "comparison": "<",
+                    "compare_to": 100
+                }
+            ]
+        }
+    },
+    "burning": {
+        "type": "origins:burn",
+        "interval": 20,
+        "burn_duration": 1,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:triton/too_hot_resource",
+            "comparison": "<=",
+            "compare_to": 0
+        }
+    },
+    "name": "Too Hot!",
+    "description": "You are burned when you are in hot biomes for too long. Drinking water seems to help."
+}
