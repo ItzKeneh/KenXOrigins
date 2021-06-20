@@ -1,0 +1,42 @@
+{
+    "type": "origins:stacking_status_effect",
+    "min_stacks": 0,
+    "max_stacks": 1,
+    "duration_per_stack": 19,
+    "effects": [
+        {
+            "effect": "minecraft:slowness",
+            "amplifier": 1,
+            "is_ambient": true,
+            "show_icon": false,
+            "show_particles": false
+        },
+        {
+            "effect": "minecraft:weakness",
+            "is_ambient": true,
+            "show_particles": false,
+            "show_icon": false
+        }
+    ],
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:biome",
+                "condition": {
+                    "type": "origins:temperature",
+                    "comparison": ">=",
+                    "compare_to": 1.1
+                }
+            },
+            {      
+                "type": "origins:fluid_height",
+                "fluid": "minecraft:water",
+                "comparison": "==",
+                "compare_to": 0
+            }
+        ]
+    },
+    "name": "Dehydrated...",
+    "description": "You are slowed and weakened in hot areas unless in water."
+}

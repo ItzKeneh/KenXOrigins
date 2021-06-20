@@ -1,0 +1,112 @@
+{
+    "type": "origins:multiple",
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 120,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+            "bar_index": 18,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:global/way_too_bright_resource",
+                "comparison": "<",
+                "compare_to": 120
+            }
+        },
+        "start_value": 120
+    },
+    "too_bright": {
+        "type": "origins:stacking_status_effect",
+        "min_stacks": 0,
+        "max_stacks": 5,
+        "duration_per_stack": 20,
+        "effects": [{
+                "effect": "minecraft:blindness",
+                "show_particles": false,
+                "show_icon": true,
+                "is_ambient": true
+            },
+            {
+                "effect": "minecraft:weakness",
+                "amplifier": 1,
+                "show_particles": false,
+                "show_icon": true,
+                "is_ambient": true
+            },
+            {
+                "effect": "minecraft:slowness",
+                "amplifier": 2,
+                "show_particles": false,
+                "show_icon": true,
+                "is_ambient": true
+            }
+        ],
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:global/way_too_bright_resource",
+            "comparison": "<=",
+            "compare_to": 65
+        }
+    },
+    "bar_functions": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [{
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [{
+                                "type": "origins:in_block_anywhere",
+                                "block_condition": {
+                                    "type": "origins:light_level",
+                                    "comparison": ">",
+                                    "compare_to": 7
+                                }
+                            },
+                            {
+                                "type": "origins:gamemode",
+                                "gamemode": "survival"
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:global/way_too_bright_resource",
+                        "change": -1
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:in_block_anywhere",
+                        "block_condition": {
+                            "type": "origins:light_level",
+                            "comparison": "<=",
+                            "compare_to": 7
+                        }
+                    },
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:global/way_too_bright_resource",
+                        "change": 1
+                    }
+                }
+            ]
+        }
+    },
+    "burning": {
+        "type": "origins:burn",
+        "interval": 20,
+        "burn_duration": 6,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:global/way_too_bright_resource",
+            "comparison": "<=",
+            "compare_to": 0
+        }
+    },
+    "name": "Way Too Bright!",
+    "description": "You aren't used to bright areas, so when in a light level higher than 7 you are debuffed and burned!"
+}
