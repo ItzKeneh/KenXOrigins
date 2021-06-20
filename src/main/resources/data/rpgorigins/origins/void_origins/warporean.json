@@ -1,0 +1,27 @@
+{
+    "powers": [
+        "origins:damage_from_potions",
+        "origins:pumpkin_hate",
+        "origins:no_shield",
+        "origins:ender_particles",
+        "rpgorigins:warporean/hyper_hydrophobia",
+        "rpgorigins:global/no_elytra",
+        "rpgorigins:global/end_alliance",
+        "rpgorigins:warporean/w_homeland",
+        "rpgorigins:warporean/warporean_height",
+        "rpgorigins:warporean/end_food",
+        "rpgorigins:warporean/walking_no",
+        "rpgorigins:warporean/warp/bar",
+        "rpgorigins:warporean/warp/simple_teleport",
+        "rpgorigins:warporean/warp/warping",
+        "rpgorigins:warporean/warp/distant_teleport",
+        "rpgorigins:warporean/warp/dimension_warp"
+    ],
+	"icon": {
+		"item": "minecraft:chorus_plant"
+	},
+	"order": 20,
+	"impact": 3,
+    "name": "Warporean",
+    "description": "Very tall creatures from the end, blessed with the gifts of advanced warping."
+}

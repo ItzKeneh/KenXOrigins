@@ -1,0 +1,25 @@
+{
+    "powers": [
+        "rpgorigins:global/slight_height",
+        "rpgorigins:global/aqua_struggle",
+        "rpgorigins:global/way_too_bright",
+        "extraorigins:flammable",
+        "rpgorigins:global/camouflage",
+		"rpgorigins:kraeik/k_homeland",
+        "rpgorigins:kraeik/fangs/blood",
+        "rpgorigins:kraeik/blood_thirsty",
+        "rpgorigins:kraeik/fangs/swap",
+        "rpgorigins:kraeik/fangs/attributes/venomous",
+        "rpgorigins:kraeik/fangs/attributes/fiery",
+        "rpgorigins:kraeik/fangs/attributes/cold",
+        "rpgorigins:kraeik/fangs/attributes/leech"
+
+    ],
+	"icon": {
+		"item": "minecraft:redstone"
+	},
+	"order": 17,
+	"impact": 3,
+    "name": "Kraeik",
+    "description": "Venomous, blood-thirsty creatures that lurk in the shadows."
+}

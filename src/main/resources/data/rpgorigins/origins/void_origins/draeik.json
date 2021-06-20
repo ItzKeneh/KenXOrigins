@@ -1,0 +1,25 @@
+{
+    "powers": [
+        "origins:water_vulnerability",
+        "origins:pumpkin_hate",
+        "origins:damage_from_potions",
+        "origins:no_shield",
+        "origins:ender_particles",
+        "rpgorigins:global/no_elytra",
+        "rpgorigins:global/end_food",
+        "rpgorigins:global/end_alliance",
+        "rpgorigins:global/slight_height",
+        "rpgorigins:draeik/d_homeland",
+        "rpgorigins:draeik/endiliency/magic",
+        "rpgorigins:draeik/endiliency/teleportation",
+        "rpgorigins:draeik/endiliency/summon_ender_buddy",
+        "rpgorigins:draeik/endiliency/dimension_warp"
+    ],
+	"icon": {
+		"item": "minecraft:ender_eye"
+	},
+	"order": 19,
+	"impact": 3,
+    "name": "Draeik",
+    "description": "The twin origin of Kraeiks that reside in the end, with a better toleration for the sun."
+}

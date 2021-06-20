@@ -1,0 +1,19 @@
+{
+    "powers": [
+        "origins:strong_arms",
+        "origins:no_shield",
+        "rpgorigins:global/dark_vision",
+        "rpgorigins:global/large",
+        "rpgorigins:global/aqua_deficient",
+        "rpgorigins:troll/carry",
+        "rpgorigins:troll/t_homeland",
+        "rpgorigins:troll/troll_benefits"
+    ],
+	"icon": {
+		"item": "minecraft:coarse_dirt"
+	},
+	"order": 13,
+	"impact": 3,
+    "name": "Troll",
+    "description": "Tall cave dwelling creatures, obsessed with shiny objects."
+}

@@ -1,0 +1,19 @@
+{
+    "powers": [
+        "origins:carnivore",
+        "rpgorigins:orc/o_homeland",
+        "rpgorigins:global/aqua_struggle",
+        "rpgorigins:global/slight_height",
+        "rpgorigins:orc/beefy",
+        "rpgorigins:global/axe_proficiency",
+        "rpgorigins:orc/battle_cry",
+        "rpgorigins:orc/set_orc"
+    ],
+	"icon": {
+		"item": "minecraft:stone_axe"
+	},
+	"order": 12,
+	"impact": 3,
+    "name": "Orc",
+    "description": "Large savage creatures, favoring mess over tidy."
+}

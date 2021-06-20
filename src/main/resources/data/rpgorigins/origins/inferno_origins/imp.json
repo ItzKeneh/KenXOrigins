@@ -1,0 +1,23 @@
+{
+    "powers": [
+        "origins:damage_from_potions",
+        "origins:water_vulnerability",
+        "rpgorigins:global/light_stomach",
+        "rpgorigins:global/climbing/toggle",
+        "rpgorigins:global/climbing/active",
+        "rpgorigins:global/lava_swimming",
+        "rpgorigins:imp/imp_immunity",
+        "rpgorigins:imp/half_sized",
+        "rpgorigins:imp/i_homeland",
+        "rpgorigins:imp/brewers_belly",
+        "rpgorigins:imp/hot_blooded",
+        "rpgorigins:imp/fiery_jumps"
+    ],
+	"icon": {
+		"item": "minecraft:fire_charge"
+	},
+	"order": 9,
+	"impact": 3,
+    "name": "Imp",
+    "description": "Small infernal creatures, with a special hunger for strange items."
+}

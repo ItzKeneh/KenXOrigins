@@ -1,0 +1,21 @@
+{
+    "powers": [
+        "origins:carnivore",
+        "rpgorigins:global/short",
+        "rpgorigins:global/too_bright",
+        "rpgorigins:global/aqua_struggle",
+        "rpgorigins:dwarf/dwarfs_pack",
+		"rpgorigins:dwarf/d_homeland",
+        "rpgorigins:dwarf/demolitionist",
+        "rpgorigins:dwarf/quick_mining",
+        "rpgorigins:dwarf/tough_skin"
+
+    ],
+	"icon": {
+		"item": "minecraft:netherite_pickaxe"
+	},
+	"order": 15,
+	"impact": 3,
+    "name": "Dwarven",
+    "description": "Strong but short humans with extraordinary mining abilities."
+}

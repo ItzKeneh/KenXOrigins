@@ -1,0 +1,23 @@
+{
+    "powers": [
+        "origins:slow_falling",
+        "origins:claustrophobia",
+        "origins:fall_immunity",
+        "rpgorigins:global/no_armor",
+        "rpgorigins:sulfurus/aero_affinity",
+        "rpgorigins:sulfurus/ashes_diet",
+        "rpgorigins:nimbus/raging_winds",
+        "rpgorigins:sulfurus/particles",
+        "rpgorigins:sulfurus/ash_form/toggle",
+        "rpgorigins:sulfurus/ash_form/active",
+        "rpgorigins:nimbus/fragile",
+        "rpgorigins:sulfurus/nimbus_form"
+    ],
+	"icon": {
+		"item": "minecraft:red_concrete_powder"
+	},
+	"impact": 3,
+    "name": "Sulfurus",
+    "description": "Your peaceful nature as a nimbus has been disrupted by the nether, filling you with rage and transforming you into a flesh consuming Sulfurus.",
+    "unchoosable": true
+}

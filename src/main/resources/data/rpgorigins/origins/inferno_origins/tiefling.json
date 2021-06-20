@@ -1,0 +1,28 @@
+{
+    "powers": [
+        "origins:damage_from_potions",
+        "origins:water_vulnerability",
+        "rpgorigins:global/frostbite",
+        "rpgorigins:global/ignorant",
+        "rpgorigins:global/lava_swimming",
+        "rpgorigins:global/slight_height",
+        "rpgorigins:tiefling/ti_homeland",
+        "rpgorigins:tiefling/fire_immune",
+        "rpgorigins:tiefling/night_crawler",
+        "rpgorigins:tiefling/fetid_hunger",
+        "rpgorigins:tiefling/accused_blood",
+        "rpgorigins:tiefling/pyromancy/mana",
+        "rpgorigins:tiefling/pyromancy/fireball",
+        "rpgorigins:tiefling/pyromancy/fire_leap",
+        "rpgorigins:tiefling/pyromancy/flame_shield",
+        "rpgorigins:tiefling/pyromancy/flare_totem",
+        "rpgorigins:tiefling/pyromancy/summon_flameling"
+    ],
+	"icon": {
+		"item": "minecraft:warped_hyphae"
+	},
+	"order": 11,
+	"impact": 3,
+    "name": "Tiefling",
+    "description": "Daemonic infernal spell casters, born with the gifts of pyromancy."
+}

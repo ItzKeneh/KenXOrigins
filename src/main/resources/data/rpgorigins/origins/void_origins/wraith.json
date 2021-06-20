@@ -1,0 +1,24 @@
+{
+    "powers": [
+        "origins:light_armor",
+        "rpgorigins:global/aqua_struggle",
+        "rpgorigins:global/way_too_bright",
+        "rpgorigins:global/no_elytra",
+        "extraorigins:flammable",
+        "rpgorigins:global/end_alliance",
+        "rpgorigins:wraith/taste_for_death",
+		"rpgorigins:wraith/w_homeland",
+        "rpgorigins:wraith/frail_body",
+        "rpgorigins:wraith/darkness/dark",
+        "rpgorigins:wraith/darkness/shadow_form",
+        "rpgorigins:wraith/darkness/shrouding_darkness",
+        "rpgorigins:wraith/darkness/dimension_warp"
+    ],
+	"icon": {
+		"item": "minecraft:wither_skeleton_skull"
+	},
+	"order": 18,
+	"impact": 3,
+    "name": "Wraith",
+    "description": "Shadow beings from a distant land, with a sweet taste for death."
+}

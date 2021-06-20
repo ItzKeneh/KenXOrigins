@@ -1,0 +1,23 @@
+{
+    "powers": [
+        "rpgorigins:global/aqua_struggle",
+        "rpgorigins:global/aqua_deficient",
+		"rpgorigins:crystalline/c_homeland",
+        "rpgorigins:crystalline/mineral_diet",
+        "rpgorigins:crystalline/fragile_shell",
+        "rpgorigins:crystalline/ore_sense/toggle",
+        "rpgorigins:crystalline/ore_sense/active",
+        "rpgorigins:crystalline/magic/mana",
+        "rpgorigins:crystalline/magic/shine_bright",
+        "rpgorigins:crystalline/magic/crystalize",
+        "rpgorigins:crystalline/magic/healing_totem"
+
+    ],
+	"icon": {
+		"item": "minecraft:emerald"
+	},
+	"order": 16,
+	"impact": 3,
+    "name": "Crystalline",
+    "description": "Sentient crystal, with mystical abilities."
+}
