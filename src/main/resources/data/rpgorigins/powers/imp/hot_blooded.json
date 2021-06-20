@@ -1,0 +1,11 @@
+{
+    "type": "origins:attacker_action_when_hit",
+    "entity_action": {
+      "type": "origins:set_on_fire",
+      "duration": 5
+    },
+    "cooldown": 60,
+    "name": "Hot Blooded",
+    "description": "Enemies are lit on fire when attacking you."
+  }
+  

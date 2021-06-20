@@ -1,0 +1,21 @@
+{
+    "type": "origins:modify_food",
+    "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+            "item": "minecraft:chorus_fruit"
+        }
+    },
+    "food_modifier": {
+        "name": "Increased food points",
+        "operation": "addition",
+        "value": 5.0
+    },
+    "saturation_modifier": {
+        "name": "Increased saturation points",
+        "operation": "addition",
+        "value": 0.7
+    },
+    "name": "Delicious Chorus!",
+    "description": "Eating chorus fruit will saturate you more."
+}

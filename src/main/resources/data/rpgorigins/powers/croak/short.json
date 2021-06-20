@@ -1,0 +1,35 @@
+{
+    "type": "origins:multiple",
+    "size": {
+        "type": "origins:action_over_time",
+        "interval": 25,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [{
+                    "type": "origins:execute_command",
+                    "command": "execute as @s run scale set extraorigins:modify_size 0.65",
+                    "permission_level": 4
+                }
+            ]
+        }
+    },
+    "callback": {
+        "type": "origins:action_on_callback",
+        "entity_action_removed": {
+            "type": "origins:execute_command",
+            "command": "execute as @s run scale reset",
+            "permission_level": 4
+        }
+    },
+    "attribute_modifiers": {
+        "type": "origins:attribute",
+        "modifier": {
+            "name": "Origin modifier",
+            "attribute": "generic.max_health",
+            "value": -2,
+            "operation": "addition"
+        }
+    },
+    "name": "Short",
+    "description": "You are a lot smaller than humans"
+}

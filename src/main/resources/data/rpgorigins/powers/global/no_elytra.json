@@ -1,0 +1,5 @@
+{
+    "type": "origins:simple",
+    "name": "No Wings",
+    "description": "As a void origin you are not allowed to wear elytras. Right-Clicking them on will not work, and dragging them into your chestplate slot will completely remove them."
+}

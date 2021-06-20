@@ -1,0 +1,8 @@
+{
+    "type": "origins:modify_player_spawn",
+    "dimension": "minecraft:overworld",
+    "structure": "minecraft:mineshaft",
+    "spawn_strategy": "center",
+    "name": "Dwarf Homeland",
+    "description": "You spawn underground in a mineshaft."
+}

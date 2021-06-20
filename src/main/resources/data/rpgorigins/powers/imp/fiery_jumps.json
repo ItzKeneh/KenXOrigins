@@ -1,0 +1,142 @@
+{
+    "type": "origins:multiple",
+    "fall_dmg": {
+        "type": "origins:invulnerability",
+        "damage_condition": {
+        "type": "origins:name",
+        "name": "fall"
+        },
+        "condition": {
+            "type": "origins:fall_distance",
+            "comparison": "<",
+            "compare_to": 12
+        }
+    },
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 2,
+        "start_value": 2,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+            "bar_index": 16,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "rpgorigins:imp/fiery_jumps_resource",
+                "comparison": "<",
+                "compare_to": 2
+            }
+        }
+    },
+    "jump": {
+        "type": "origins:active_self",
+        "hud_render": {
+            "should_render": false
+        },
+        "key": {
+            "key": "key.jump"
+        },
+        "cooldown": 0,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:add_velocity",
+                    "z": 0.5,
+                    "space": "local",
+                    "set": true
+                },
+                {
+                    "type": "origins:add_velocity",
+                    "y": 0.4,
+                    "space": "world",
+                    "set": false
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "rpgorigins:imp/fiery_jumps_resource",
+                    "change": -1
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute at @s run playsound entity.ghast.shoot master @a[distance=..5] ~ ~ ~ 1 1.7",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute at @s run particle minecraft:flame ~ ~ ~ 0.3 0 0.3 0 50",
+                    "permission_level": 4
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "rpgorigins:imp/fiery_jumps_resource",
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:on_block",
+                    "inverted": true
+                },
+                {
+                    "type": "origins:gamemode",
+                    "gamemode": "creative",
+                    "inverted": true
+                },
+                {
+                    "type": "origins:gamemode",
+                    "gamemode": "spectator",
+                    "inverted": true
+                },
+                {
+                    "type": "origins:in_block",
+                    "block_condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:block",
+                                "block": "minecraft:water",
+                                "inverted": true
+                            },
+                            {
+                                "type": "origins:block",
+                                "block": "minecraft:lava",
+                                "inverted": true
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    },
+    "jump_regen": {
+        "type": "origins:action_over_time",
+        "interval": 26,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "rpgorigins:imp/fiery_jumps_resource",
+            "change": 1
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "rpgorigins:imp/fiery_jumps_resource",
+                    "comparison": "<",
+                    "compare_to": 2
+                },
+                {
+                    "type": "origins:on_block"
+                }
+            ]
+        }
+    },
+    "name": "Fiery Jumps",
+    "description": "Get 2 extra jumps"
+}

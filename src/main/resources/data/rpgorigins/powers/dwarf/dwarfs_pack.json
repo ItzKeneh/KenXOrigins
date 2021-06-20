@@ -1,0 +1,7 @@
+{
+    "type": "origins:inventory",
+    "drop_on_death": true,
+    "key": "secondary",
+    "name": "Dwarf's Pack",
+    "description": "You are equipped with a pack that can hold 9 stacks of items, your stuff will drop upon dying."
+}

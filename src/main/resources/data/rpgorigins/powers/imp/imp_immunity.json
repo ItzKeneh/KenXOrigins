@@ -1,0 +1,49 @@
+{
+    "type": "origins:multiple",
+    "in_fire": {
+        "type": "origins:invulnerability",
+        "damage_condition": {
+            "type": "origins:name",
+            "name": "inFire"
+        },
+        "condition": {
+            "type": "origins:dimension",
+            "dimension": "minecraft:the_nether"
+        }
+    },
+    "on_fire": {
+        "type": "origins:invulnerability",
+        "damage_condition": {
+            "type": "origins:name",
+            "name": "onFire"
+        },
+        "condition": {
+            "type": "origins:dimension",
+            "dimension": "minecraft:the_nether"
+        }
+    },
+    "hot_floor": {
+        "type": "origins:invulnerability",
+        "damage_condition": {
+            "type": "origins:name",
+            "name": "hotFloor"
+        },
+        "condition": {
+            "type": "origins:dimension",
+            "dimension": "minecraft:the_nether"
+        }
+    },
+    "lava": {
+        "type": "origins:invulnerability",
+        "damage_condition": {
+            "type": "origins:name",
+            "name": "lava"
+        },
+        "condition": {
+            "type": "origins:dimension",
+            "dimension": "minecraft:the_nether"
+        }
+    },
+    "name": "Imp Immunity",
+    "description": "All fire immunity only when in the nether."
+}

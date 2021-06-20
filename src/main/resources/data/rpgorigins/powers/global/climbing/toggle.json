@@ -1,0 +1,94 @@
+{
+    "type": "origins:multiple",
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "hud_render": {
+            "should_render": false
+        },
+        "start_value": 1
+    },
+    "toggle_on": {
+        "type": "origins:active_self",
+        "hud_render": {
+            "should_render": false
+        },
+        "key": {
+            "key": "key.hotbar.1"
+        },
+        "cooldown": 2,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [{
+                    "type": "origins:play_sound",
+                    "sound": "entity.experience_orb.pickup"
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 1,
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:global/climbing/toggle_resource",
+                        "change": 1
+                    }
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                    "type": "origins:resource",
+                    "resource": "*:global/climbing/toggle_resource",
+                    "comparison": "<=",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:sneaking"
+                }
+            ]
+        }
+    },
+    "toggle_off": {
+        "type": "origins:active_self",
+        "hud_render": {
+            "should_render": false
+        },
+        "key": {
+            "key": "key.hotbar.1"
+        },
+        "cooldown": 2,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [{
+                    "type": "origins:play_sound",
+                    "sound": "entity.experience_orb.pickup",
+                    "pitch": 0.5
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 1,
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:global/climbing/toggle_resource",
+                        "change": -1
+                    }
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                    "type": "origins:resource",
+                    "resource": "*:global/climbing/toggle_resource",
+                    "comparison": ">=",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:sneaking"
+                }
+            ]
+        }
+    },
+    "hidden": true
+}

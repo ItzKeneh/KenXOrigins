@@ -1,0 +1,17 @@
+{
+    "type": "origins:self_action_when_hit",
+    "entity_action": {
+        "type": "origins:apply_effect",
+        "effect": {
+            "effect": "minecraft:slowness",
+            "amplifier": 2,
+            "duration": 200
+        }
+    },
+    "damage_condition": {
+        "type": "origins:attacker"
+    },
+    "cooldown": 20,
+    "name": "Ignorant",
+    "description": "You will never back down from a fight, so when you get hit you gain slowness, preventing you from fleeing."
+}

@@ -1,0 +1,12 @@
+{
+    "type": "origins:attribute",
+    "modifier": {
+        "name": "ToughSkin Armor",
+        "attribute": "minecraft:generic.armor",
+        "value": 4,
+        "operation": "addition"
+    },
+    "name": "Tough Skin",
+    "description": "Being in the mines for so long, your skin has hardend, giving you 2 armor points.",
+    "hidden": true
+}

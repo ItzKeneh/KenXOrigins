@@ -1,0 +1,49 @@
+{
+    "type": "origins:multiple",
+    "name": "[1] Shine Bright!",
+    "description": "Shine so bright it blinds and slows foes in an 8 block radius of you. [Mana: 60]",
+    "activate": {
+        "type": "origins:active_self",
+        "cooldown": 600,
+        "key": {
+            "key": "key.hotbar.1"
+        },
+        "hud_render": {
+            "should_render": false
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute as @s run function rpgorigins:shine_bright",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:crystalline/magic/mana_bar",
+                    "change": -60
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:block.beacon.power_select",
+                    "pitch": 2
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:sneaking"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:crystalline/magic/mana_bar",
+                    "comparison": ">=",
+                    "compare_to": 60
+                }
+            ]
+        }
+    }
+}

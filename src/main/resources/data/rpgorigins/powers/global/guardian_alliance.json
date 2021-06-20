@@ -1,0 +1,25 @@
+{
+    "type": "origins:action_on_callback",
+    "entity_action_chosen": {
+        "type": "origins:execute_command",
+        "command": "team join aqua @s",
+        "permission_level": 4
+    },
+    "entity_action_removed": {
+        "type": "origins:and",
+        "actions": [{
+                "type": "origins:execute_command",
+                "command": "team leave @s",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "execute as @s run scale reset",
+                "permission_level": 4
+            }
+        ]
+    },
+    "execute_chosen_when_orb": true,
+    "name": "Aqua Alliance",
+    "description": "You have an unspoken alliance with guardians, when ever they are within 16 blocks of you they are passive, this does not include elder guardians."
+}

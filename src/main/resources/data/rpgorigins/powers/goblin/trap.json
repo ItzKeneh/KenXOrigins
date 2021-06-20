@@ -1,0 +1,196 @@
+{
+    "type": "origins:multiple",
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+            "bar_index": 14,
+            "condition": {
+                "type": "origins:or",
+                "conditions": [{
+                        "type": "origins:sneaking"
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:goblin/trap_resource",
+                        "comparison": ">=",
+                        "compare_to": 1
+                    }
+                ]
+            }
+        }
+    },
+    "cd_timer": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 24000,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "place_trap": {
+        "type": "origins:active_self",
+        "hud_render": {
+            "should_render": false
+        },
+        "cooldown": 1,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [{
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:block.chest.locked",
+                    "pitch": 0.5,
+                    "volume": 2
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute as @s run function rpgorigins:summon_trap",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:goblin/trap_resource",
+                    "change": 1
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:goblin/trap_cd_timer",
+                    "change": 24000
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                    "type": "origins:resource",
+                    "resource": "*:goblin/trap_cd_timer",
+                    "comparison": "<=",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:goblin/trap_resource",
+                    "comparison": "<=",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:on_block"
+                }
+            ]
+        }
+    },
+    "remove_trap": {
+        "type": "origins:active_self",
+        "hud_render": {
+            "should_render": false
+        },
+        "key": "secondary",
+        "cooldown": 1,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [{
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:block.chest.close",
+                    "pitch": 0.5,
+                    "volume": 2
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute as @s run function rpgorigins:kill_trap",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:goblin/trap_resource",
+                    "change": -1
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:goblin/trap_cd_timer",
+                    "change": -24000
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                    "type": "origins:resource",
+                    "resource": "*:goblin/trap_cd_timer",
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:goblin/trap_resource",
+                    "comparison": ">=",
+                    "compare_to": 1
+                }
+            ]
+        }
+    },
+    "trap_cd_lower": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:goblin/trap_cd_timer",
+            "change": -1
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                    "type": "origins:resource",
+                    "resource": "*:goblin/trap_cd_timer",
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:goblin/trap_resource",
+                    "comparison": ">=",
+                    "compare_to": 1
+                }
+            ]
+        }
+    },
+    "trap_cd_end": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "rising_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute as @s run function rpgorigins:kill_trap",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:goblin/trap_resource",
+                    "change": -1
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                    "type": "origins:resource",
+                    "resource": "*:goblin/trap_cd_timer",
+                    "comparison": "<=",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:goblin/trap_resource",
+                    "comparison": ">=",
+                    "compare_to": 1
+                }
+            ]
+        }
+    },
+    "name": "Construct Trap",
+    "description": "Use your primary to construct a trap at your location. Only Goblins can see traps and are immune to them. Traps will last a full minecraft day before removing themselves. If you wish to remove them manually use your secondary key. If your trap bar is empty then you don't have a trap out. (Sneak to see the bar or put a trap out to see the bar)"
+}

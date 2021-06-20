@@ -1,0 +1,132 @@
+{
+	"type": "origins:multiple",
+	"lungs": {
+		"type": "origins:stacking_status_effect",
+		"min_stacks": 0,
+		"max_stacks": 1,
+		"duration_per_stack": 20,
+		"effect": {
+			"effect": "minecraft:water_breathing",
+			"amplifier": 0,
+			"is_ambient": true,
+			"show_particles": false,
+			"show_icon": false
+		},
+		"condition": {
+			"type": "origins:submerged_in",
+			"fluid": "minecraft:water"
+		}
+	},
+	"conditions": {
+		"type": "origins:simple",
+		"condition": {
+			"type": "origins:and",
+			"conditions": [{
+					"type": "origins:submerged_in",
+					"fluid": "minecraft:water"
+				},
+				{
+					"type": "origins:or",
+					"conditions": [{
+							"type": "origins:gamemode",
+							"gamemode": "creative"
+						},
+						{
+							"type": "origins:gamemode",
+							"gamemode": "spectator"
+						}
+					],
+					"inverted": true
+				}
+			]
+		}
+	},
+	"bar": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 2000,
+		"start_value": 2000,
+		"hud_render": {
+			"should_render": true,
+			"sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+			"bar_index": 14,
+			"condition": {
+				"type": "origins:or",
+				"conditions": [{
+					"type": "origins:resource",
+					"resource": "rpgorigins:global/strong_lungs_bar",
+					"comparison": "<",
+					"compare_to": 2000
+				}]
+			}
+		},
+		"hidden": true
+	},
+	"bar_on_respawn": {
+		"type": "origins:action_on_callback",
+		"entity_action_chosen": {
+			"type": "origins:change_resource",
+			"resource": "rpgorigins:global/strong_lungs_bar",
+			"change": 2000
+		},
+		"entity_action_respawned": {
+			"type": "origins:change_resource",
+			"resource": "rpgorigins:global/strong_lungs_bar",
+			"change": 2000
+		}
+	},
+	"suffocating_in_water": {
+		"type": "origins:damage_over_time",
+		"interval": 1,
+		"onset_delay": 1,
+		"damage": 1,
+		"damage_source": {
+			"name": "drown",
+			"unblockable": true,
+			"bypasses_armor": true
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [{
+					"type": "origins:resource",
+					"resource": "rpgorigins:global/strong_lungs_bar",
+					"comparison": "<=",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:power_active",
+					"power": "rpgorigins:global/strong_lungs_conditions"
+				}
+			]
+		}
+	},
+	"bar_behavior_1": {
+		"type": "origins:action_over_time",
+		"interval": 1,
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "rpgorigins:global/strong_lungs_bar",
+			"change": -2
+		},
+		"condition": {
+			"type": "origins:power_active",
+			"power": "rpgorigins:global/strong_lungs_conditions"
+		}
+	},
+	"bar_behavior_2": {
+		"type": "origins:action_over_time",
+		"interval": 1,
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "rpgorigins:global/strong_lungs_bar",
+			"change": 7
+		},
+		"condition": {
+			"type": "origins:power_active",
+			"power": "rpgorigins:global/strong_lungs_conditions",
+			"inverted": true
+		}
+	},
+	"name": "Strong Lungs",
+	"description": "You last longer underwater."
+}

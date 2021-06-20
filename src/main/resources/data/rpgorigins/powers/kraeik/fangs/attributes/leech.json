@@ -1,0 +1,47 @@
+{
+    "type": "origins:multiple",
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "fang_damage": {
+        "type": "origins:self_action_on_hit",
+        "entity_action": {
+            "type": "origins:heal",
+            "amount": 4.0
+        },
+        "cooldown": 100,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+            "bar_index": 12
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:air"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:kraeik/fangs/attributes/leech_resource",
+                    "comparison": ">=",
+                    "compare_to": 1
+                }
+            ]
+
+        }
+    },
+    "name": "[4] Leeching Fangs",
+    "description": "Syphon your enemies health and heal 2 hearts after biting them."
+}

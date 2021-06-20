@@ -1,0 +1,37 @@
+{
+    "type": "origins:multiple",
+    "spawn": {
+        "type": "origins:modify_player_spawn",
+        "dimension": "minecraft:overworld",
+        "biome": "minecraft:mountains"
+    },
+    "callback": {
+        "type": "origins:action_on_callback",
+        "entity_action_removed": {
+            "type": "origins:and",
+            "actions": [{
+                    "type": "origins:change_resource",
+                    "resource": "*:harpy/divine_shield_resource_hidden",
+                    "change": -1
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:harpy/divine_shield_resource",
+                    "change": -600
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute as @s at @s run function rpgorigins:kill_harpy_shield",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "tag @s remove harpySelf",
+                    "permission_level": 4
+                }
+            ]
+        }
+    },
+    "name": "Harpy Homeland",
+    "description": "You spawn in a mountain biome."
+}

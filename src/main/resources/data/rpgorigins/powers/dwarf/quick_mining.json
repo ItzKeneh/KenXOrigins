@@ -1,0 +1,15 @@
+{
+    "type": "origins:stacking_status_effect",
+    "min_stacks": 0,
+    "max_stacks": 1,
+    "duration_per_stack": 25,
+    "effect": {
+        "effect": "minecraft:haste",
+        "amplifier": 2,
+        "show_particles": false,
+        "show_icon": true,
+        "is_ambient": true
+    },
+    "name": "Quick Miner",
+    "description": "You are very skilled in mining, leaving you with a constant haste 3 effect."
+}

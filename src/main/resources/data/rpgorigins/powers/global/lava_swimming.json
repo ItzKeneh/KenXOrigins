@@ -1,0 +1,23 @@
+{
+    "type": "origins:multiple",
+    "lava_swim": {
+        "type": "origins:swimming",
+        "condition": {
+            "type": "origins:submerged_in",
+            "fluid": "minecraft:lava"
+        }
+    },
+    "lava_sight": {
+        "type": "origins:lava_vision",
+        "s": 0,
+        "v": 15
+    },
+    "lava_speed": {
+        "type": "origins:modify_lava_speed",
+        "modifier": {
+            "operation": "addition",
+            "value": 0.4
+        }
+    },
+    "hidden": true
+}

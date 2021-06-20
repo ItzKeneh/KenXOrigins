@@ -1,0 +1,70 @@
+{
+    "type": "origins:multiple",
+    "red_block": {
+        "type": "origins:recipe",
+        "recipe": {
+            "id": "kenehorigins:red_block",
+            "type": "minecraft:crafting_shaped",
+            "pattern": [
+                "###",
+                "###",
+                "###"
+            ],
+            "key": {
+                "#": {
+                    "item": "minecraft:red_mushroom"
+                }
+            },
+            "result": {
+                "item": "minecraft:red_mushroom_block",
+                "amount": 3
+            }
+        }
+    },
+    "brown_block": {
+        "type": "origins:recipe",
+        "recipe": {
+            "id": "kenehorigins:brown_block",
+            "type": "minecraft:crafting_shaped",
+            "pattern": [
+                "###",
+                "###",
+                "###"
+            ],
+            "key": {
+                "#": {
+                    "item": "minecraft:brown_mushroom"
+                }
+            },
+            "result": {
+                "item": "minecraft:brown_mushroom_block",
+                "amount": 3
+            }
+        }
+    },
+    "stem": {
+        "type": "origins:recipe",
+        "recipe": {
+            "id": "kenehorigins:mush_stem",
+            "type": "minecraft:crafting_shaped",
+            "pattern": [
+                "###",
+                "#Q#",
+                "###"
+            ],
+            "key": {
+                "#": {
+                    "item": "minecraft:brown_mushroom"
+                },
+                "Q": {
+                    "item": "minecraft:white_dye"
+                }
+            },
+            "result": {
+                "item": "minecraft:mushroom_stem",
+                "amount": 4
+            }
+        }
+    },
+    "hidden": true
+}

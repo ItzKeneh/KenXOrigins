@@ -1,0 +1,200 @@
+{
+    "type": "origins:multiple",
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 600,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+            "bar_index": 0,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:harpy/divine_shield_resource",
+                "comparison": ">",
+                "compare_to": 0
+            }
+        }
+    },
+    "resource_hidden": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "shield_activate": {
+        "type": "origins:active_self",
+        "hud_render": {
+            "should_render": false
+        },
+        "key": "secondary",
+        "cooldown": 660,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [{
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:block.beacon.activate",
+                    "pitch": "1.5",
+                    "volume": 1.2
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute as @s run tag @s add harpySelf",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute as @s run function rpgorigins:summon_harpy_shield",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:harpy/divine_shield_resource",
+                    "change": 600
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:harpy/divine_shield_resource_hidden",
+                    "change": 1
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                    "type": "origins:resource",
+                    "resource": "*:harpy/divine_shield_resource",
+                    "comparison": "<=",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:harpy/divine_shield_resource_hidden",
+                    "comparison": "<=",
+                    "compare_to": 0
+                }
+            ]
+        }
+    },
+    "shield_active1": {
+        "type": "origins:conditioned_attribute",
+        "modifiers": [{
+                "attribute": "minecraft:generic.knockback_resistance",
+                "operation": "addition",
+                "value": 1.0,
+                "name": "No Knockback"
+            },
+            {
+                "attribute": "minecraft:generic.armor",
+                "operation": "addition",
+                "value": 4,
+                "name": "Reduced Damage"
+            }
+        ],
+        "tick_rate": 20,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:harpy/divine_shield_resource",
+            "comparison": ">",
+            "compare_to": 0
+        }
+    },
+    "shield_active2": {
+        "type": "origins:action_over_time",
+        "interval": 30,
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "execute at @s run effect give @a[tag=!harpySelf,distance=..5] regeneration 4 1",
+            "permission_level": 4
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:harpy/divine_shield_resource",
+            "comparison": ">",
+            "compare_to": 0
+        }
+    },
+    "shield_cd_timer": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:harpy/divine_shield_resource",
+            "change": -1
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:harpy/divine_shield_resource",
+            "comparison": ">",
+            "compare_to": 0
+        }
+    },
+    "shield_cd_end": {
+        "type": "origins:action_over_time",
+        "interval": 10,
+        "rising_action": {
+            "type": "origins:and",
+            "actions": [{
+                    "type": "origins:execute_command",
+                    "command": "execute as @s run function rpgorigins:kill_harpy_shield",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:block.beacon.deactivate",
+                    "pitch": 1.5,
+                    "volume": 1.2
+                },
+                {
+                    "type": "origins:apply_effect",
+                    "effects": [{
+                            "effect": "minecraft:slowness",
+                            "amplifier": 2,
+                            "duration": 200,
+                            "is_ambient": true,
+                            "show_particles": false,
+                            "show_icon": false
+                        },
+                        {
+                            "effect": "minecraft:weakness",
+                            "amplifier": 1,
+                            "duration": 200,
+                            "is_ambient": true,
+                            "show_particles": false,
+                            "show_icon": false
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 1,
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:harpy/divine_shield_resource_hidden",
+                        "change": -1
+                    }
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                    "type": "origins:resource",
+                    "resource": "*:harpy/divine_shield_resource",
+                    "comparison": "<=",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:harpy/divine_shield_resource_hidden",
+                    "comparison": ">=",
+                    "compare_to": 1
+                }
+            ]
+        }
+    },
+    "name": "Divine Shield",
+    "description": "Use your secondary to put up a divine shield. This shield lasts for 30 seconds, and while the shield is up you take reduced damage, no knockback, and give regeneration to all other PLAYERS around you. Once Divine Shield is done, you will be heavily slowed and weakened for 10 seconds."
+}

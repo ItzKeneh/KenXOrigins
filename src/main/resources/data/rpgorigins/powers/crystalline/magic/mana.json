@@ -1,0 +1,39 @@
+{
+    "type": "origins:multiple",
+    "bar": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 200,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+            "bar_index": 1
+        },
+        "start_value": 200
+    },
+    "mana_regen": {
+        "type": "origins:action_over_time",
+        "interval": 25,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:crystalline/magic/mana_bar",
+            "change": 2
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:crystalline/magic/crystalize_resource",
+            "comparison": "<=",
+            "compare_to": 0
+        }
+    },
+    "respawn_mana": {
+        "type": "origins:action_on_callback",
+        "entity_action_respawned": {
+            "type": "origins:change_resource",
+            "resource": "*:crystalline/magic/mana_bar",
+            "change": 100
+        }
+    },
+    "name": "Crystalline Mystic",
+    "description": "Crystallines are born with magic, allowing you to store mana (up to 200), and execute spells by sneaking an pressing a hotbar key."
+}
