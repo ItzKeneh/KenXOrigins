@@ -1,0 +1,60 @@
+{
+    "type": "origins:multiple",
+    "no_food": {
+        "type": "origins:prevent_item_use",
+        "item_condition": {
+            "type": "origins:food"
+        }
+    },
+    "prevent_healing": {
+        "type": "origins:disable_regen"
+    },
+    "prevent_death": {
+        "type": "origins:prevent_death",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [{
+                    "type": "origins:feed",
+                    "food": 7,
+                    "saturation": 1
+                },
+                {
+                    "type": "origins:apply_effect",
+                    "effects": [{
+                        "effect": "minecraft:regeneration",
+                        "duration": 35,
+                        "amplifier": 5,
+                        "is_ambient": true,
+                        "show_icon": false,
+                        "show_particles": false
+                    }]
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:entity.generic.drink",
+                    "pitch": 0.5
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute at @s run particle minecraft:dust 0.2 0.2 0.2 1 ~ ~1 ~ 0.4 0.5 0.4 0 200",
+                    "permission_level": 4
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:food_level",
+            "comparison": "<",
+            "compare_to": 20
+        }
+    },
+    "exhaustion": {
+        "type": "origins:modify_exhaustion",
+        "modifier": {
+            "name": "Hanggyyy",
+            "value": 2,
+            "operation": "multiply_base"
+        }
+    },
+    "name": "Taste For Death",
+    "description": "You don't regen naturally anymore, you exhaust quickly, you only feed by dying, but if you die fully fed you will actually die."
+}

@@ -1,0 +1,47 @@
+{
+    "type": "origins:multiple",
+    "bar": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 150,
+        "hud_render": {
+            "should_render": true,
+            "bar_index": 6
+        },
+        "start_value": 150
+    },
+    "bar_regen": {
+        "type": "origins:action_over_time",
+        "interval": 25,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:draeik/endiliency/magic_bar",
+            "change": 1
+        }
+    },
+    "respawn_bar": {
+        "type": "origins:action_on_callback",
+        "entity_action_respawned": {
+            "type": "origins:change_resource",
+            "resource": "*:draeik/endiliency/magic_bar",
+            "change": 45
+        },
+        "entity_action_removed": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute as @s run function rpgorigins:dimension_return",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute as @s run function rpgorigins:kill_ender_buddy",
+                    "permission_level": 4
+                }
+            ]
+        }
+    },
+    "name": "Endiliency",
+    "description": "You have been tought the magic of the end. You can store a max of 150 mana and cast spells."
+}

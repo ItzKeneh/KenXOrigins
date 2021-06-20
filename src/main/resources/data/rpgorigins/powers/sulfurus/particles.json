@@ -1,0 +1,17 @@
+{
+    "type": "origins:multiple",
+    "particles": {
+        "type": "origins:particle",
+        "particle": "minecraft:smoke",
+        "frequency": 6
+    },
+    "model": {
+        "type": "origins:model_color",
+        "blue": 0.5,
+        "green": 0.5
+    },
+    "shaking": {
+        "type": "origins:shaking"
+    },
+    "hidden": true
+}

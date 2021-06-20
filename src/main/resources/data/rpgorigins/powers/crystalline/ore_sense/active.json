@@ -1,0 +1,151 @@
+{
+    "type": "origins:multiple",
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "sense_ores": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [{
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [{
+                                "type": "origins:resource",
+                                "resource": "*:crystalline/ore_sense/active_resource",
+                                "comparison": ">=",
+                                "compare_to": 1
+                            },
+                            {
+                                "type": "origins:block_in_radius",
+                                "block_condition": {
+                                    "type": "origins:in_tag",
+                                    "tag": "rpgorigins:ores"
+                                },
+                                "radius": 2
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:play_sound",
+                        "sound": "minecraft:block.note_block.harp",
+                        "volume": 1,
+                        "pitch": 1.3
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [{
+                                "type": "origins:resource",
+                                "resource": "*:crystalline/ore_sense/active_resource",
+                                "comparison": ">=",
+                                "compare_to": 1
+                            },
+                            {
+                                "type": "origins:block_in_radius",
+                                "block_condition": {
+                                    "type": "origins:in_tag",
+                                    "tag": "rpgorigins:ores"
+                                },
+                                "radius": 5
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:play_sound",
+                        "sound": "minecraft:block.note_block.harp",
+                        "volume": 0.9,
+                        "pitch": 1
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [{
+                                "type": "origins:resource",
+                                "resource": "*:crystalline/ore_sense/active_resource",
+                                "comparison": ">=",
+                                "compare_to": 1
+                            },
+                            {
+                                "type": "origins:block_in_radius",
+                                "block_condition": {
+                                    "type": "origins:in_tag",
+                                    "tag": "rpgorigins:ores"
+                                },
+                                "radius": 10
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:play_sound",
+                        "sound": "minecraft:block.note_block.harp",
+                        "volume": 0.6,
+                        "pitch": 0.9
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [{
+                                "type": "origins:resource",
+                                "resource": "*:crystalline/ore_sense/active_resource",
+                                "comparison": ">=",
+                                "compare_to": 1
+                            },
+                            {
+                                "type": "origins:block_in_radius",
+                                "block_condition": {
+                                    "type": "origins:in_tag",
+                                    "tag": "rpgorigins:ores"
+                                },
+                                "radius": 15
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:play_sound",
+                        "sound": "minecraft:block.note_block.harp",
+                        "volume": 0.4,
+                        "pitch": 0.8
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [{
+                                "type": "origins:resource",
+                                "resource": "*:crystalline/ore_sense/active_resource",
+                                "comparison": ">=",
+                                "compare_to": 1
+                            },
+                            {
+                                "type": "origins:block_in_radius",
+                                "block_condition": {
+                                    "type": "origins:in_tag",
+                                    "tag": "rpgorigins:ores"
+                                },
+                                "radius": 20
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:play_sound",
+                        "sound": "minecraft:block.note_block.harp",
+                        "volume": 0.2,
+                        "pitch": 0.7
+                    }
+                }
+            ]
+        }
+    },
+    "name": "Ore Sense",
+    "description": "Toggle with primary, you can sense ores near you, a ringing sound gets louder the closer you are to an ore."
+}

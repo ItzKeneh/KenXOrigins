@@ -1,0 +1,1305 @@
+{
+    "type": "origins:multiple",
+    "no_food": {
+        "type": "origins:prevent_item_use",
+        "item_condition": {
+            "type": "origins:food"
+        }
+    },
+    "coal": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 18,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+            "bar_index": 0,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:crystalline/mineral_diet_coal",
+                "comparison": ">",
+                "compare_to": 0
+            }
+        },
+        "max_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:feed",
+                    "food": 2,
+                    "saturation": 0.4
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:crystalline/mineral_diet_coal",
+                    "change": -18
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:entity.player.burp"
+                },
+                
+                {
+                    "type": "origins:execute_command",
+                    "command": "clear @s coal 1",
+                    "permission_level": 4
+                }
+            ]
+        }
+    },
+    "charcoal": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 18,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+            "bar_index": 0,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:crystalline/mineral_diet_charcoal",
+                "comparison": ">",
+                "compare_to": 0
+            }
+        },
+        "max_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:feed",
+                    "food": 2,
+                    "saturation": 0.1
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:crystalline/mineral_diet_charcoal",
+                    "change": -18
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:entity.player.burp"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "clear @s charcoal 1",
+                    "permission_level": 4
+                }
+            ]
+        }
+    },
+    "iron": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 18,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+            "bar_index": 0,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:crystalline/mineral_diet_iron",
+                "comparison": ">",
+                "compare_to": 0
+            }
+        },
+        "max_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:feed",
+                    "food": 4,
+                    "saturation": 0.4
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:crystalline/mineral_diet_iron",
+                    "change": -18
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:entity.player.burp"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "clear @s iron_ingot 1",
+                    "permission_level": 4
+                }
+            ]
+        }
+    },
+    "gold": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 18,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+            "bar_index": 0,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:crystalline/mineral_diet_gold",
+                "comparison": ">",
+                "compare_to": 0
+            }
+        },
+        "max_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:feed",
+                    "food": 6,
+                    "saturation": 1
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:crystalline/mineral_diet_gold",
+                    "change": -18
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:entity.player.burp"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "clear @s gold_ingot 1",
+                    "permission_level": 4
+                }
+            ]
+        }
+    },
+    "lapis": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 18,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+            "bar_index": 0,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:crystalline/mineral_diet_lapis",
+                "comparison": ">",
+                "compare_to": 0
+            }
+        },
+        "max_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:feed",
+                    "food": 3,
+                    "saturation": 0.3
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:crystalline/mineral_diet_lapis",
+                    "change": -18
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:entity.player.burp"
+                },
+                
+                {
+                    "type": "origins:execute_command",
+                    "command": "clear @s lapis_lazuli 1",
+                    "permission_level": 4
+                }
+            ]
+        }
+    },
+    "redstone": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 18,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+            "bar_index": 0,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:crystalline/mineral_diet_redstone",
+                "comparison": ">",
+                "compare_to": 0
+            }
+        },
+        "max_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:feed",
+                    "food": 2,
+                    "saturation": 0.1
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:crystalline/mineral_diet_redstone",
+                    "change": -18
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:entity.player.burp"
+                },
+                
+                {
+                    "type": "origins:execute_command",
+                    "command": "clear @s redstone 1",
+                    "permission_level": 4
+                }
+            ]
+        }
+    },
+    "diamond": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 18,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+            "bar_index": 0,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:crystalline/mineral_diet_diamond",
+                "comparison": ">",
+                "compare_to": 0
+            }
+        },
+        "max_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:feed",
+                    "food": 7,
+                    "saturation": 2
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:crystalline/mineral_diet_diamond",
+                    "change": -18
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:entity.player.burp"
+                },
+                
+                {
+                    "type": "origins:execute_command",
+                    "command": "clear @s diamond 1",
+                    "permission_level": 4
+                }
+            ]
+        }
+    },
+    "emerald": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 18,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+            "bar_index": 0,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:crystalline/mineral_diet_emerald",
+                "comparison": ">",
+                "compare_to": 0
+            }
+        },
+        "max_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:feed",
+                    "food": 8,
+                    "saturation": 2.5
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:crystalline/mineral_diet_emerald",
+                    "change": -18
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:entity.player.burp"
+                },
+                
+                {
+                    "type": "origins:execute_command",
+                    "command": "clear @s emerald 1",
+                    "permission_level": 4
+                }
+            ]
+        }
+    },
+    "lower_eaties": {
+        "type": "origins:action_over_time",
+        "interval": 24,
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:crystalline/mineral_diet_coal",
+                        "comparison": ">",
+                        "compare_to": 0
+                    },
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:crystalline/mineral_diet_coal",
+                        "change": -3
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:crystalline/mineral_diet_charcoal",
+                        "comparison": ">",
+                        "compare_to": 0
+                    },
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:crystalline/mineral_diet_charcoal",
+                        "change": -3
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:crystalline/mineral_diet_gold",
+                        "comparison": ">",
+                        "compare_to": 0
+                    },
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:crystalline/mineral_diet_gold",
+                        "change": -3
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:crystalline/mineral_diet_lapis",
+                        "comparison": ">",
+                        "compare_to": 0
+                    },
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:crystalline/mineral_diet_lapis",
+                        "change": -3
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:crystalline/mineral_diet_iron",
+                        "comparison": ">",
+                        "compare_to": 0
+                    },
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:crystalline/mineral_diet_iron",
+                        "change": -3
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:crystalline/mineral_diet_diamond",
+                        "comparison": ">",
+                        "compare_to": 0
+                    },
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:crystalline/mineral_diet_diamond",
+                        "change": -3
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:crystalline/mineral_diet_redstone",
+                        "comparison": ">",
+                        "compare_to": 0
+                    },
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:crystalline/mineral_diet_redstone",
+                        "change": -3
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:crystalline/mineral_diet_emerald",
+                        "comparison": ">",
+                        "compare_to": 0
+                    },
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:crystalline/mineral_diet_emerald",
+                        "change": -3
+                    }
+                }
+            ]
+        }
+    },
+    "coal_timer": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:coal"
+                        }
+                    },
+                    "inverted": true
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "offhand",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:coal"
+                        }
+                    },
+                    "inverted": true
+                }
+            ]
+        },
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:crystalline/mineral_diet_coal",
+            "change": -18
+        }
+    },
+    "eat_coal": {
+        "type": "origins:active_self",
+        "cooldown": 4,
+        "key": {
+            "key": "key.use",
+            "continuous": true
+        },
+        "hud_render": {
+            "should_render": false
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:food_level",
+                    "comparison": "<",
+                    "compare_to": 20
+                },
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "item": "minecraft:coal"
+                                }
+                            }
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "offhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "item": "minecraft:coal"
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:entity.generic.eat"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:crystalline/mineral_diet_coal",
+                    "change": 3
+                },
+                {
+                    "type": "origins:apply_effect",
+                    "effect": {
+                        "effect": "minecraft:slowness",
+                        "amplifier": 3,
+                        "duration": 4,
+                        "is_ambient": true,
+                        "show_icon": false,
+                        "show_particles": false
+                    }
+                }
+            ]
+        }
+    },
+    "iron_timer": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:iron_ingot"
+                        }
+                    },
+                    "inverted": true
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "offhand",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:iron_ingot"
+                        }
+                    },
+                    "inverted": true
+                }
+            ]
+        },
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:crystalline/mineral_diet_iron",
+            "change": -18
+        }
+    },
+    "eat_iron": {
+        "type": "origins:active_self",
+        "cooldown": 4,
+        "key": {
+            "key": "key.use",
+            "continuous": true
+        },
+        "hud_render": {
+            "should_render": false
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:food_level",
+                    "comparison": "<",
+                    "compare_to": 20
+                },
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "item": "minecraft:iron_ingot"
+                                }
+                            }
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "offhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "item": "minecraft:iron_ingot"
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:entity.generic.eat"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:crystalline/mineral_diet_iron",
+                    "change": 3
+                },
+                {
+                    "type": "origins:apply_effect",
+                    "effect": {
+                        "effect": "minecraft:slowness",
+                        "amplifier": 3,
+                        "duration": 4,
+                        "is_ambient": true,
+                        "show_icon": false,
+                        "show_particles": false
+                    }
+                }
+            ]
+        }
+    },
+    "gold_timer": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:gold_ingot"
+                        }
+                    },
+                    "inverted": true
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "offhand",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:gold_ingot"
+                        }
+                    },
+                    "inverted": true
+                }
+            ]
+        },
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:crystalline/mineral_diet_gold",
+            "change": -18
+        }
+    },
+    "eat_gold": {
+        "type": "origins:active_self",
+        "cooldown": 4,
+        "key": {
+            "key": "key.use",
+            "continuous": true
+        },
+        "hud_render": {
+            "should_render": false
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:food_level",
+                    "comparison": "<",
+                    "compare_to": 20
+                },
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "item": "minecraft:gold_ingot"
+                                }
+                            }
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "offhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "item": "minecraft:gold_ingot"
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:entity.generic.eat"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:crystalline/mineral_diet_gold",
+                    "change": 3
+                },
+                {
+                    "type": "origins:apply_effect",
+                    "effect": {
+                        "effect": "minecraft:slowness",
+                        "amplifier": 3,
+                        "duration": 4,
+                        "is_ambient": true,
+                        "show_icon": false,
+                        "show_particles": false
+                    }
+                }
+            ]
+        }
+    },
+    "charcoal_timer": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:charcoal"
+                        }
+                    },
+                    "inverted": true
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "offhand",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:charcoal"
+                        }
+                    },
+                    "inverted": true
+                }
+            ]
+        },
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:crystalline/mineral_diet_charcoal",
+            "change": -18
+        }
+    },
+    "eat_charcoal": {
+        "type": "origins:active_self",
+        "cooldown": 4,
+        "key": {
+            "key": "key.use",
+            "continuous": true
+        },
+        "hud_render": {
+            "should_render": false
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:food_level",
+                    "comparison": "<",
+                    "compare_to": 20
+                },
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "item": "minecraft:charcoal"
+                                }
+                            }
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "offhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "item": "minecraft:charcoal"
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:entity.generic.eat"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:crystalline/mineral_diet_charcoal",
+                    "change": 3
+                },
+                {
+                    "type": "origins:apply_effect",
+                    "effect": {
+                        "effect": "minecraft:slowness",
+                        "amplifier": 3,
+                        "duration": 4,
+                        "is_ambient": true,
+                        "show_icon": false,
+                        "show_particles": false
+                    }
+                }
+            ]
+        }
+    },
+    "lapis_timer": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:lapis_lazuli"
+                        }
+                    },
+                    "inverted": true
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "offhand",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:lapis_lazuli"
+                        }
+                    },
+                    "inverted": true
+                }
+            ]
+        },
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:crystalline/mineral_diet_lapis",
+            "change": -18
+        }
+    },
+    "eat_lapis": {
+        "type": "origins:active_self",
+        "cooldown": 4,
+        "key": {
+            "key": "key.use",
+            "continuous": true
+        },
+        "hud_render": {
+            "should_render": false
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:food_level",
+                    "comparison": "<",
+                    "compare_to": 20
+                },
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "item": "minecraft:lapis_lazuli"
+                                }
+                            }
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "offhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "item": "minecraft:lapis_lazuli"
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:entity.generic.eat"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:crystalline/mineral_diet_lapis",
+                    "change": 3
+                },
+                {
+                    "type": "origins:apply_effect",
+                    "effect": {
+                        "effect": "minecraft:slowness",
+                        "amplifier": 3,
+                        "duration": 4,
+                        "is_ambient": true,
+                        "show_icon": false,
+                        "show_particles": false
+                    }
+                }
+            ]
+        }
+    },
+    "redstone_timer": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:redstone"
+                        }
+                    },
+                    "inverted": true
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "offhand",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:redstone"
+                        }
+                    },
+                    "inverted": true
+                }
+            ]
+        },
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:crystalline/mineral_diet_redstone",
+            "change": -18
+        }
+    },
+    "eat_redstone": {
+        "type": "origins:active_self",
+        "cooldown": 4,
+        "key": {
+            "key": "key.use",
+            "continuous": true
+        },
+        "hud_render": {
+            "should_render": false
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:food_level",
+                    "comparison": "<",
+                    "compare_to": 20
+                },
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "item": "minecraft:redstone"
+                                }
+                            }
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "offhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "item": "minecraft:redstone"
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:entity.generic.eat"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:crystalline/mineral_diet_redstone",
+                    "change": 3
+                },
+                {
+                    "type": "origins:apply_effect",
+                    "effect": {
+                        "effect": "minecraft:slowness",
+                        "amplifier": 3,
+                        "duration": 4,
+                        "is_ambient": true,
+                        "show_icon": false,
+                        "show_particles": false
+                    }
+                }
+            ]
+        }
+    },
+    "diamond_timer": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:diamond"
+                        }
+                    },
+                    "inverted": true
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "offhand",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:diamond"
+                        }
+                    },
+                    "inverted": true
+                }
+            ]
+        },
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:crystalline/mineral_diet_diamond",
+            "change": -18
+        }
+    },
+    "eat_diamond": {
+        "type": "origins:active_self",
+        "cooldown": 4,
+        "key": {
+            "key": "key.use",
+            "continuous": true
+        },
+        "hud_render": {
+            "should_render": false
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:food_level",
+                    "comparison": "<",
+                    "compare_to": 20
+                },
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "item": "minecraft:diamond"
+                                }
+                            }
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "offhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "item": "minecraft:diamond"
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:entity.generic.eat"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:crystalline/mineral_diet_diamond",
+                    "change": 3
+                },
+                {
+                    "type": "origins:apply_effect",
+                    "effect": {
+                        "effect": "minecraft:slowness",
+                        "amplifier": 3,
+                        "duration": 4,
+                        "is_ambient": true,
+                        "show_icon": false,
+                        "show_particles": false
+                    }
+                }
+            ]
+        }
+    },
+    "emerald_timer": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:emerald"
+                        }
+                    },
+                    "inverted": true
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "offhand",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:emerald"
+                        }
+                    },
+                    "inverted": true
+                }
+            ]
+        },
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:crystalline/mineral_diet_emerald",
+            "change": -18
+        }
+    },
+    "eat_emerald": {
+        "type": "origins:active_self",
+        "cooldown": 4,
+        "key": {
+            "key": "key.use",
+            "continuous": true
+        },
+        "hud_render": {
+            "should_render": false
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:food_level",
+                    "comparison": "<",
+                    "compare_to": 20
+                },
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "item": "minecraft:emerald"
+                                }
+                            }
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "offhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "item": "minecraft:emerald"
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:entity.generic.eat"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:crystalline/mineral_diet_emerald",
+                    "change": 3
+                },
+                {
+                    "type": "origins:apply_effect",
+                    "effect": {
+                        "effect": "minecraft:slowness",
+                        "amplifier": 3,
+                        "duration": 4,
+                        "is_ambient": true,
+                        "show_icon": false,
+                        "show_particles": false
+                    }
+                }
+            ]
+        }
+    },
+    "name": "Mineral Diet",
+    "description": "You can ONLY eat minerals such as coal, charcoal, iron, gold, diamonds, emeralds, lapis, and redstone."
+}
