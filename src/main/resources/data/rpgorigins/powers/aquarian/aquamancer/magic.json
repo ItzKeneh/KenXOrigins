@@ -1,0 +1,159 @@
+{
+    "type": "origins:multiple",
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 100,
+        "hud_render": {
+            "should_render": true,
+            "bar_index": 1
+        },
+        "start_value": 100
+    },
+    "aquamancer_cooldown_regen": {
+        "type": "origins:action_over_time",
+        "interval": 3,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "rpgorigins:aquarian/aquamancer/magic_resource",
+            "change": 1
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "rpgorigins:aquarian/rain_cloud_resource_hidden",
+            "comparison": ">=",
+            "compare_to": 1
+        }
+    },
+    "aquamancer_active_1": {
+        "type": "origins:active_self",
+        "hud_render": {
+            "should_render": false
+        },
+        "key": {
+            "key": "key.hotbar.1"
+        },
+        "cooldown": 0,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [{
+                    "type": "origins:execute_command",
+                    "command": "execute at @s run playsound minecraft:block.beacon.power_select master @a[distance=..4] ~ ~ ~ 1 2",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute as @s run function rpgorigins:aquamancer_heal",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "rpgorigins:aquarian/aquamancer/magic_resource",
+                    "change": -25
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "rpgorigins:aquarian/aquamancer/magic_resource",
+                    "comparison": ">=",
+                    "compare_to": 25
+                },
+                {
+                    "type": "origins:sneaking"
+                }
+            ]
+        }
+    },
+    "aquamancer_active_2": {
+        "type": "origins:active_self",
+        "hud_render": {
+            "should_render": false
+        },
+        "key": {
+            "key": "key.hotbar.2"
+        },
+        "cooldown": 0,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [{
+                    "type": "origins:execute_command",
+                    "command": "execute at @s run playsound minecraft:block.beacon.power_select master @a[distance=..4] ~ ~ ~ 1 1.4",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "effect give @s minecraft:strength 30 0 false",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "rpgorigins:aquarian/aquamancer/magic_resource",
+                    "change": -50
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "rpgorigins:aquarian/aquamancer/magic_resource",
+                    "comparison": ">=",
+                    "compare_to": 50
+                },
+                {
+                    "type": "origins:sneaking"
+                }
+            ]
+        }
+    },
+    "aquamancer_active_3": {
+        "type": "origins:active_self",
+        "hud_render": {
+            "should_render": false
+        },
+        "key": {
+            "key": "key.hotbar.4"
+        },
+        "cooldown": 0,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [{
+                    "type": "origins:execute_command",
+                    "command": "execute at @s run playsound minecraft:block.beacon.power_select master @a[distance=..4] ~ ~ ~ 1 .9",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "effect give @s minecraft:health_boost 30 1 false",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "rpgorigins:aquarian/aquamancer/magic_resource",
+                    "change": -100
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "rpgorigins:aquarian/aquamancer/magic_resource",
+                    "comparison": ">=",
+                    "compare_to": 100
+                },
+                {
+                    "type": "origins:sneaking"
+                }
+            ]
+        }
+    },
+    "name": "Aquamancer",
+    "description": "Aquarians are able to manipulate water! Each aquamancer spell is executed by sneaking and pressing a hotbar key (1-4). You can store up to 100 water in your water bar and the bar can regenerate by being in water/rain, drinking a potion, or during your rain cloud ability, the rain cloud regenerates the bar the fastest. "
+}

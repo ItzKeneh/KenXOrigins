@@ -1,0 +1,60 @@
+{
+    "type": "origins:multiple",
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 200,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+            "bar_index": 15,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:aquarian/rain_swim/rain_regen_resource",
+                "comparison": ">",
+                "compare_to": 0
+            }
+        }
+    },
+    "regen_in_rain": {
+        "type": "origins:action_over_time",
+        "interval": 8,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:aquarian/rain_swim/rain_regen_resource",
+            "change": 1
+        },
+        "condition": {
+            "type": "origins:in_rain"
+        }
+    },
+    "decrease_not_in_rain": {
+        "type": "origins:action_over_time",
+        "interval": 4,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:aquarian/rain_swim/rain_regen_resource",
+            "change": -4
+        },
+        "condition": {
+            "type": "origins:or",
+            "conditions": [{
+                    "type": "origins:in_rain",
+                    "inverted": true
+                },
+                {
+                    "type": "origins:and",
+                    "conditions": [{
+                            "type": "origins:swimming"
+                        },
+                        {
+                            "type": "origins:in_rain"
+                        }
+                    ]
+                }
+            ]
+
+        }
+    },
+    "hidden": true
+}

@@ -1,0 +1,5 @@
+{
+    "type": "origins:simple",
+    "name": "[1] Group Heal",
+    "description": "Give yourself and other entities in a 4 block radius, regeneration 1 for 15 seconds. [Water Bar: 25]"
+}

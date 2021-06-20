@@ -1,0 +1,122 @@
+{
+    "type": "origins:multiple",
+    "exhaust": {
+        "type": "origins:modify_exhaustion",
+        "modifier": {
+            "name": "Hanggyyy",
+            "value": 1.4,
+            "operation": "multiply_base"
+        }
+    },
+    "no_food": {
+        "type": "origins:prevent_item_use",
+        "item_condition": {
+            "type": "origins:food"
+        }
+    },
+    "regenerate_food": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:feed",
+            "food": 1,
+            "saturation": 1
+        },
+        "condition": {
+            "type": "origins:or",
+            "conditions": [{
+                    "type": "origins:fluid_height",
+                    "fluid": "minecraft:water",
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:in_rain"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:aquarian/rain_cloud_resource_hidden",
+                    "comparison": ">=",
+                    "compare_to": 1
+                }
+            ]
+        }
+    },
+    "regenerate_bar": {
+        "type": "origins:action_over_time",
+        "interval": 60,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:aquarian/aquamancer/magic_resource",
+            "change": 1
+        },
+        "condition": {
+            "type": "origins:or",
+            "conditions": [{
+                    "type": "origins:fluid_height",
+                    "fluid": "minecraft:water",
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:in_rain"
+                }
+            ]
+        }
+    },
+    "bar_from_potions": {
+		"type": "origins:action_on_item_use",
+		"hidden": true,
+		"item_condition": {
+			"type": "origins:ingredient",
+			"ingredient": {
+				"item": "minecraft:potion"
+			}
+		},
+		"entity_action": {
+			"type": "origins:change_resource",
+            "resource": "*:aquarian/aquamancer/magic_resource",
+            "change": 2
+		}
+	},
+    "prevent_healing": {
+        "type": "origins:disable_regen"
+    },
+    "heal_override": {
+        "type": "origins:action_over_time",
+        "interval": 30,
+        "entity_action": {
+            "type": "origins:heal",
+            "amount": 1
+        },
+        "condition": {
+            "type": "origins:food_level",
+            "comparison": ">",
+            "compare_to": 0
+        }
+    },
+    "exhaust_when_healing": {
+        "type": "origins:action_over_time",
+        "interval": 30,
+        "entity_action": {
+            "type": "origins:exhaust",
+            "amount": 2
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                    "type": "origins:food_level",
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:relative_health",
+                    "comparison": "<",
+                    "compare_to": 1
+                }
+            ]
+        }
+    },
+    "name": "Aquavore",
+    "description": "You only feed by being in water or rain. (The rain cloud counts)"
+}
