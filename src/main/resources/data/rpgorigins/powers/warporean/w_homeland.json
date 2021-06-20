@@ -1,7 +1,0 @@
-{
-    "type": "origins:modify_player_spawn",
-    "dimension": "minecraft:the_end",
-    "spawn_strategy": "center",
-    "name": "Warporean Homeland",
-    "description": "You spawn in the end."
-}
